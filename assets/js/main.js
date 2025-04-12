@@ -1,8 +1,14 @@
-/*
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+if ('serviceWorker' in navigator) {
+	window.addEventListener('load', () => {
+	  navigator.serviceWorker.register('/sw.js')
+		.then(registration => {
+		  console.log('Service Worker registered with scope:', registration.scope);
+		})
+		.catch(error => {
+		  console.log('Service Worker registration failed:', error);
+		});
+	});
+  }
 
 (function($) {
 

@@ -1,0 +1,21 @@
+{
+    "name": "Varad's Portfolio",
+    "short_name": "Portfolio",
+    "description": "This is my portfolio website showcasing his projects and skills.",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#000000",
+    "icons": [
+      {
+        "src": "images/Me2.jpg",
+        "sizes": "192x192",
+        "type": "image/jpg"
+      },
+      {
+        "src": "images/Me.jpg",
+        "sizes": "512x512",
+        "type": "image/jpg"
+      }
+    ]
+  }
