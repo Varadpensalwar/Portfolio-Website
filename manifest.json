@@ -1,6 +1,6 @@
 {
     "name": "Varad's Portfolio",
-    "short_name": "Portfolio",
+    "short_name": "Varad Portfolio",
     "description": "This is my portfolio website showcasing his projects and skills.",
     "start_url": "/index.html",
     "display": "standalone",
