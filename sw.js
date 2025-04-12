@@ -5,20 +5,10 @@ const CACHE_NAME = 'my-pwa-cache-v1';
 const CORE_ASSETS = [
     '/',
     '/index.html',
-    '/offline\offline.html', // Create this fallback page
-    '/offline\assets\css\styles.css',
-    '/offline\assets\js\main.js',
-    '/offline\assets\js\scrollreveal.min.js',
-    '/offline\assets\scss\base\_base.scss',
-    '/offline\assets\scss\components\_breakpoints.scss',
-    '/offline\assets\scss\components\_header.scss',
-    '/offline\assets\scss\components\_home.scss',
-    '/offline\assets\scss\config\_variables.scss',
-    '/offline\assets\scss\styles.scss',
-    '/offline\assets\img\ghost-img.png',
-    '/styles/main.css',
-    '/scripts/main.js',
+    '/assets\\css\\main.css',
+    '/assets\\js\\main.js',
     '/manifest.json'
+  
 ];
 
 // Install event - cache core files
