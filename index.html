@@ -34,27 +34,7 @@
 
   <body class="is-preload">
     <!-- Simple, Reliable PWA Install Button (Mobile Only, Animated) -->
-    <button
-      id="pwa-install-btn"
-      style="
-        display: none;
-        position: fixed;
-        right: 4vw;
-        bottom: 3vh;
-        z-index: 9999;
-        background: #fff;
-        color: #222;
-        border: none;
-        border-radius: 2em;
-        padding: 0.7em 1.5em;
-        font-size: 1.1em;
-        font-weight: 600;
-        box-shadow: 0 4px 24px rgba(44, 62, 80, 0.13);
-        cursor: pointer;
-        transition: box-shadow 0.18s, background 0.18s;
-        overflow: visible;
-      "
-    >
+    <button id="pwa-install-btn">
       <span class="pwa-orbiter orbiter-1"></span>
       <span class="pwa-orbiter orbiter-2"></span>
       <span class="pwa-orbiter orbiter-3"></span>
@@ -80,27 +60,6 @@
       <span style="vertical-align: middle">Install App</span>
     </button>
     <div id="pwa-confetti"></div>
-    <script>
-      let deferredPrompt;
-      const installBtn = document.getElementById("pwa-install-btn");
-      window.addEventListener("beforeinstallprompt", (e) => {
-        e.preventDefault();
-        deferredPrompt = e;
-        installBtn.style.display = "inline-flex";
-      });
-      installBtn.addEventListener("click", () => {
-        installBtn.style.display = "none";
-        if (deferredPrompt) {
-          deferredPrompt.prompt();
-          deferredPrompt.userChoice.then(() => {
-            deferredPrompt = null;
-          });
-        }
-      });
-      window.addEventListener("appinstalled", () => {
-        installBtn.style.display = "none";
-      });
-    </script>
 
     <!-- Sidebar -->
     <section id="sidebar">
