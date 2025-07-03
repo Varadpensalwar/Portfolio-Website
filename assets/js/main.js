@@ -221,7 +221,7 @@ if ('serviceWorker' in navigator) {
 			}
 		}
 
-		// Show button only on mobile and when installable, for 100ms
+		// Show button only on mobile and when installable, for 10 seconds
 		window.addEventListener('beforeinstallprompt', (e) => {
 			if (!isMobile()) return;
 			e.preventDefault();
@@ -230,13 +230,13 @@ if ('serviceWorker' in navigator) {
 			btn.classList.add('animated', 'glow', 'floating');
 			btn.querySelector('.pwa-shimmer').style.display = 'block';
 			setTimeout(() => btn.classList.remove('animated'), 900);
-			// Hide after 100ms if not clicked
+			// Hide after 10 seconds if not clicked
 			clearTimeout(btn._hideTimeout);
 			btn._hideTimeout = setTimeout(() => {
 				btn.style.display = 'none';
 				btn.classList.remove('glow', 'floating');
 				btn.querySelector('.pwa-shimmer').style.display = 'none';
-			}, 100);
+			}, 10000);
 		});
 
 		// Button click: show prompt, animate, confetti, ripple
