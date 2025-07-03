@@ -216,9 +216,15 @@ if ('serviceWorker' in navigator) {
 		}
 
 		// Hide button if app is already installed
-		if (isAppInstalled()) {
-			hideBtn();
+		function visibilityCheck() {
+			if (isAppInstalled()) {
+				hideBtn();
+			}
 		}
+		// Initial check
+		visibilityCheck();
+		document.addEventListener('visibilitychange', visibilityCheck);
+		window.addEventListener('resize', visibilityCheck);
 
 		// Confetti burst
 		function confettiBurst() {
