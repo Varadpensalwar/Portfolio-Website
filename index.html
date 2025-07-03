@@ -701,6 +701,12 @@
 			60% { transform: scale(2.8); opacity: 0.2; }
 			100% { transform: scale(1); opacity: 1; }
 		}
+		.pwa-confetti {
+			position: fixed;
+			pointer-events: none;
+			left: 0; top: 0; width: 100vw; height: 100vh;
+			z-index: 10000;
+		}
 	</style>
 
 	<!-- Scripts -->
@@ -993,233 +999,6 @@
 		</span>
 		<span class="pwa-btn-ripple"></span>
 	</button>
-	<style>
-	#pwa-install-btn {
-		position: fixed;
-		right: 3vw;
-		bottom: 3vh;
-		z-index: 9999;
-		display: flex;
-		align-items: center;
-		background: none;
-		border: none;
-		padding: 0;
-		margin: 0;
-		cursor: pointer;
-		outline: none;
-		opacity: 0.98;
-		user-select: none;
-		animation: pwa-btn-fadein 0.7s cubic-bezier(.4,2,.3,1), pwa-btn-pulse 1.2s infinite cubic-bezier(.4,2,.3,1) alternate, pwa-btn-tilt 2.2s infinite cubic-bezier(.4,2,.3,1) alternate;
-		will-change: transform, box-shadow, filter;
-		filter: blur(0px);
-	}
-	.pwa-btn-orbiters {
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		width: 60px;
-		height: 60px;
-		pointer-events: none;
-		z-index: 1;
-		transform: translate(-50%, -50%);
-	}
-	.pwa-orb {
-		position: absolute;
-		width: 8px;
-		height: 8px;
-		border-radius: 50%;
-		background: linear-gradient(120deg, #dbeafe 0%, #eaeaea 100%);
-		opacity: 0.7;
-		box-shadow: 0 0 8px 2px #dbeafe55;
-		animation-timing-function: cubic-bezier(.4,2,.3,1);
-	}
-	.pwa-orb1 {
-		left: 50%;
-		top: 0%;
-		animation: orb1-move 2.2s linear infinite, orb-shape-scale 1.2s infinite alternate cubic-bezier(.4,2,.3,1);
-	}
-	.pwa-orb2 {
-		left: 90%;
-		top: 50%;
-		animation: orb2-move 2.5s linear infinite, orb-shape-scale 1.5s infinite alternate cubic-bezier(.4,2,.3,1);
-	}
-	.pwa-orb3 {
-		left: 10%;
-		top: 80%;
-		animation: orb3-move 2.8s linear infinite, orb-shape-scale 1.7s infinite alternate cubic-bezier(.4,2,.3,1);
-	}
-	@keyframes orb1-move {
-		0% { transform: translate(-50%, 0) scale(1); }
-		50% { transform: translate(-50%, 10px) scale(1.2); }
-		100% { transform: translate(-50%, 0) scale(1); }
-	}
-	@keyframes orb2-move {
-		0% { transform: translate(-50%, -50%) scale(1); }
-		50% { transform: translate(-60%, -60%) scale(1.15); }
-		100% { transform: translate(-50%, -50%) scale(1); }
-	}
-	@keyframes orb3-move {
-		0% { transform: translate(-50%, -50%) scale(1); }
-		50% { transform: translate(-40%, -60%) scale(1.1); }
-		100% { transform: translate(-50%, -50%) scale(1); }
-	}
-	.pwa-btn-outer {
-		display: flex;
-		align-items: center;
-		border-radius: 2em;
-		padding: 2px;
-		background: linear-gradient(120deg, #eaeaea 0%, #dbeafe 20%, #f5f6fa 50%, #eaeaea 80%, #dbeafe 100%);
-		background-size: 400% 400%;
-		animation: border-gradient-move 1.2s linear infinite;
-		box-shadow: 0 0 0 0 rgba(44,62,80,0.13), 0 2px 12px 0 rgba(44,62,80,0.13);
-		filter: drop-shadow(0 0 16px #dbeafe55);
-		transition: box-shadow 0.3s, filter 0.3s;
-		position: relative;
-		backdrop-filter: blur(8px);
-	}
-	@keyframes border-gradient-move {
-		0% { background-position: 0% 50%; }
-		50% { background-position: 100% 50%; }
-		100% { background-position: 0% 50%; }
-	}
-	.pwa-btn-inner {
-		display: flex;
-		align-items: center;
-		gap: 0.5em;
-		background: rgba(255,255,255,0.92);
-		border-radius: 2em;
-		padding: 0.38em 1em 0.38em 0.8em;
-		font-size: 0.98em;
-		font-weight: 600;
-		box-shadow: 0 2px 8px rgba(44,62,80,0.10), 0 1px 4px rgba(44,62,80,0.08);
-		backdrop-filter: blur(5px);
-		position: relative;
-		overflow: hidden;
-	}
-	#pwa-install-btn:active .pwa-btn-inner {
-		background: rgba(245,246,250,0.97);
-		box-shadow: 0 1px 4px rgba(44,62,80,0.13);
-	}
-	.pwa-btn-icon {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		background: #f5f6fa;
-		border-radius: 50%;
-		width: 1.7em;
-		height: 1.7em;
-		box-shadow: 0 1px 4px rgba(44,62,80,0.10);
-		margin-right: 0.1em;
-		transition: box-shadow 0.3s, background 0.3s, transform 0.3s;
-		will-change: transform;
-		animation: icon-bounce 0.7s infinite cubic-bezier(.4,2,.3,1), icon-rotate 1.2s infinite linear;
-	}
-	@keyframes icon-bounce {
-		0%, 100% { transform: translateY(0) scale(1); }
-		50% { transform: translateY(-7px) scale(1.13) rotate(-8deg); }
-	}
-	@keyframes icon-rotate {
-		0% { filter: brightness(1); }
-		50% { filter: brightness(1.15); }
-		100% { filter: brightness(1); }
-	}
-	#pwa-install-btn:active .pwa-btn-inner, #pwa-install-btn:active .pwa-btn-icon {
-		animation: btn-tilt-press 0.3s cubic-bezier(.4,2,.3,1);
-	}
-	@keyframes btn-tilt-press {
-		0% { transform: rotate(0deg) scale(1); }
-		50% { transform: rotate(-10deg) scale(0.96); }
-		100% { transform: rotate(0deg) scale(1); }
-	}
-	.pwa-btn-text {
-		font-family: inherit;
-		font-size: 0.98em;
-		color: #2c3e50;
-		letter-spacing: 0.01em;
-		background: none;
-		transition: color 0.3s;
-		font-weight: 700;
-	}
-	.pwa-btn-shimmer {
-		position: absolute;
-		left: -60%;
-		top: 0;
-		width: 60%;
-		height: 100%;
-		background: linear-gradient(120deg, rgba(255,255,255,0.0) 0%, rgba(255,255,255,0.25) 50%, rgba(255,255,255,0.0) 100%);
-		transform: skewX(-18deg);
-		pointer-events: none;
-		animation: shimmer-move 1.2s linear infinite;
-	}
-	@keyframes shimmer-move {
-		0% { left: -60%; }
-		100% { left: 120%; }
-	}
-	#pwa-install-btn:focus-visible .pwa-btn-inner {
-		outline: 2px solid #4f8cff;
-		outline-offset: 2px;
-	}
-	.pwa-btn-ripple {
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		width: 0;
-		height: 0;
-		background: rgba(44,62,80,0.13);
-		border-radius: 50%;
-		transform: translate(-50%, -50%);
-		pointer-events: none;
-		opacity: 0;
-		transition: width 0.5s cubic-bezier(.4,2,.3,1), height 0.5s cubic-bezier(.4,2,.3,1), opacity 0.3s;
-	}
-	#pwa-install-btn.ripple .pwa-btn-ripple {
-		width: 180%;
-		height: 180%;
-		opacity: 1;
-		transition: width 0.5s cubic-bezier(.4,2,.3,1), height 0.5s cubic-bezier(.4,2,.3,1), opacity 0.3s;
-	}
-	@keyframes pwa-btn-fadein {
-		from { opacity: 0; transform: translateY(30px) scale(0.92); }
-		to { opacity: 0.98; transform: none; }
-	}
-	@keyframes pwa-btn-pulse {
-		0% { box-shadow: 0 0 0 0 rgba(44,62,80,0.10), 0 2px 12px 0 rgba(44,62,80,0.13); filter: hue-rotate(0deg); }
-		50% { box-shadow: 0 0 32px 8px #dbeafe88, 0 2px 16px 0 rgba(44,62,80,0.13); filter: hue-rotate(18deg); }
-		100% { box-shadow: 0 0 0 0 rgba(44,62,80,0.10), 0 2px 12px 0 rgba(44,62,80,0.13); filter: hue-rotate(0deg); }
-	}
-	@keyframes pwa-btn-tilt {
-		0% { transform: rotate(-2deg); }
-		50% { transform: rotate(2deg); }
-		100% { transform: rotate(-2deg); }
-	}
-	@media (max-width: 700px) {
-		#pwa-install-btn {
-			right: 2vw;
-			bottom: 2vh;
-			font-size: 0.95em;
-		}
-		.pwa-btn-inner {
-			padding: 0.32em 0.8em 0.32em 0.7em;
-		}
-		.pwa-btn-orbiters {
-			width: 44px;
-			height: 44px;
-		}
-	}
-	.pwa-orb-star svg polygon {
-		filter: drop-shadow(0 0 6px #dbeafe88);
-	}
-	.pwa-orb-diamond svg polygon {
-		filter: drop-shadow(0 0 6px #f5f6fa88);
-	}
-	.pwa-orb-circle svg circle {
-		filter: drop-shadow(0 0 6px #eaeaea88);
-	}
-	@keyframes orb-shape-scale {
-		0% { transform: scale(1); }
-		100% { transform: scale(1.25) rotate(12deg); }
-	}
-	</style>
 	<script>
 	// Utility function to detect mobile devices
 	function isMobileDevice() {
@@ -1230,6 +1009,8 @@
 	const ripple = installBtn.querySelector('.pwa-btn-ripple');
 	let pwaBtnTimeout = null;
 	let pwaBtnHideTimeout = null;
+	let longPressTimeout = null;
+	let burstLock = false;
 	window.addEventListener('beforeinstallprompt', (e) => {
 		if (!isMobileDevice()) return;
 		e.preventDefault();
@@ -1277,15 +1058,143 @@
 		installBtn.style.display = 'none';
 		installBtn.style.opacity = '0';
 	}
-	function burstParticlesOnTap() {
-		installBtn.classList.add('particles-burst');
-		setTimeout(() => installBtn.classList.remove('particles-burst'), 600);
+	function burstParticlesOnTapRandom() {
+		const orbiters = installBtn.querySelectorAll('.pwa-orb');
+		orbiters.forEach((orb, i) => {
+			// Random angle (0-360deg) and distance (30-60px)
+			const angle = Math.random() * 2 * Math.PI;
+			const dist = 30 + Math.random() * 30;
+			const tx = Math.cos(angle) * dist;
+			const ty = Math.sin(angle) * dist;
+			// Random color
+			const colors = [
+				'url(#star-grad)', 'url(#diamond-grad)', 'url(#circle-grad)',
+				'#a084ee', '#4f8cff', '#dbeafe', '#f5f6fa', '#eaeaea'
+			];
+			let color = colors[Math.floor(Math.random() * colors.length)];
+			// For SVG shapes, set fill
+			const svg = orb.querySelector('svg');
+			if (svg) {
+				const shape = svg.querySelector('polygon, circle');
+				if (shape) shape.setAttribute('fill', color);
+			}
+			orb.style.transition = 'transform 0.55s cubic-bezier(.4,2,.3,1), opacity 0.55s, filter 0.55s';
+			orb.style.transform = `translate(${tx}px,${ty}px) scale(1.7)`;
+			orb.style.opacity = '0.2';
+			orb.style.filter = 'blur(2px)';
+		});
+		setTimeout(() => {
+			orbiters.forEach((orb, i) => {
+				orb.style.transition = 'transform 0.5s cubic-bezier(.4,2,.3,1), opacity 0.5s, filter 0.5s';
+				orb.style.transform = '';
+				orb.style.opacity = '';
+				orb.style.filter = '';
+				// Restore original color
+				const svg = orb.querySelector('svg');
+				if (svg) {
+					const shape = svg.querySelector('polygon, circle');
+					if (shape) {
+						if (orb.classList.contains('pwa-orb-star')) shape.setAttribute('fill', 'url(#star-grad)');
+						if (orb.classList.contains('pwa-orb-diamond')) shape.setAttribute('fill', 'url(#diamond-grad)');
+						if (orb.classList.contains('pwa-orb-circle')) shape.setAttribute('fill', 'url(#circle-grad)');
+					}
+				}
+			});
+		}, 600);
 	}
 	// Patch into installBtn click event
 	const oldClickHandler = installBtn.onclick;
 	installBtn.addEventListener('click', (ev) => {
-		burstParticlesOnTap();
+		burstParticlesOnTapRandom();
 		if (typeof oldClickHandler === 'function') oldClickHandler(ev);
+	}, {capture: true});
+	function triggerParticleBurstOnce() {
+		if (burstLock) return;
+		burstLock = true;
+		burstParticlesOnTapRandom();
+		setTimeout(() => { burstLock = false; }, 700);
+	}
+	installBtn.addEventListener('mouseenter', () => {
+		triggerParticleBurstOnce();
+	});
+	installBtn.addEventListener('touchstart', () => {
+		triggerParticleBurstOnce();
+		// Long press
+		clearTimeout(longPressTimeout);
+		longPressTimeout = setTimeout(() => {
+			triggerParticleBurstOnce();
+		}, 400);
+	});
+	installBtn.addEventListener('touchend', () => {
+		clearTimeout(longPressTimeout);
+	});
+	installBtn.addEventListener('mouseleave', () => {
+		clearTimeout(longPressTimeout);
+	});
+	function confettiBurstFromButton(btn) {
+		// Remove any old confetti
+		document.querySelectorAll('.pwa-confetti').forEach(e => e.remove());
+		const confetti = document.createElement('canvas');
+		confetti.className = 'pwa-confetti';
+		document.body.appendChild(confetti);
+		const ctx = confetti.getContext('2d');
+		confetti.width = window.innerWidth;
+		confetti.height = window.innerHeight;
+		// Get button center
+		const rect = btn.getBoundingClientRect();
+		const cx = rect.left + rect.width/2;
+		const cy = rect.top + rect.height/2;
+		// Confetti params
+		const shapes = ['rect', 'circle', 'triangle'];
+		const colors = ['#4f8cff','#a084ee','#dbeafe','#f5f6fa','#eaeaea','#a084ee','#4f8cff'];
+		const pieces = Array.from({length: 22}, (_,i) => ({
+			x: cx, y: cy,
+			r: 6 + Math.random()*6,
+			angle: Math.random()*2*Math.PI,
+			speed: 6 + Math.random()*7,
+			gravity: 0.5 + Math.random()*0.7,
+			vx: 0, vy: 0,
+			color: colors[Math.floor(Math.random()*colors.length)],
+			shape: shapes[Math.floor(Math.random()*shapes.length)],
+			rot: Math.random()*2*Math.PI,
+			rotSpeed: (Math.random()-0.5)*0.2
+		}));
+		let frame = 0;
+		function drawConfetti() {
+			ctx.clearRect(0,0,confetti.width,confetti.height);
+			pieces.forEach(p => {
+				// Move
+				p.vx = Math.cos(p.angle) * p.speed * (1-frame/60);
+				p.vy += p.gravity;
+				p.x += p.vx;
+				p.y += p.vy;
+				p.rot += p.rotSpeed;
+				ctx.save();
+				ctx.translate(p.x, p.y);
+				ctx.rotate(p.rot);
+				ctx.globalAlpha = Math.max(0, 1-frame/60);
+				ctx.fillStyle = p.color;
+				if (p.shape==='rect') ctx.fillRect(-p.r/2,-p.r/2,p.r,p.r);
+				else if (p.shape==='circle') ctx.beginPath(),ctx.arc(0,0,p.r/2,0,2*Math.PI),ctx.fill();
+				else if (p.shape==='triangle') {
+					ctx.beginPath();
+					ctx.moveTo(0,-p.r/2);
+					ctx.lineTo(-p.r/2,p.r/2);
+					ctx.lineTo(p.r/2,p.r/2);
+					ctx.closePath();
+					ctx.fill();
+				}
+				ctx.restore();
+			});
+			frame++;
+			if (frame<60) requestAnimationFrame(drawConfetti);
+			else confetti.remove();
+		}
+		drawConfetti();
+	}
+	// Patch into installBtn click event
+	installBtn.addEventListener('click', (ev) => {
+		confettiBurstFromButton(installBtn);
 	}, {capture: true});
 	</script>
 
