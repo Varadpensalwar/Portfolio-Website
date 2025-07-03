@@ -204,6 +204,22 @@ if ('serviceWorker' in navigator) {
 			return window.matchMedia('(max-width: 768px)').matches;
 		}
 
+		// Utility: Detect if app is installed
+		function isAppInstalled() {
+			return (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true);
+		}
+
+		function hideBtn() {
+			btn.style.display = 'none';
+			btn.classList.remove('glow', 'floating', 'animated');
+			btn.querySelector('.pwa-shimmer').style.display = 'none';
+		}
+
+		// Hide button if app is already installed
+		if (isAppInstalled()) {
+			hideBtn();
+		}
+
 		// Confetti burst
 		function confettiBurst() {
 			if (!confettiContainer) return;
@@ -223,7 +239,7 @@ if ('serviceWorker' in navigator) {
 
 		// Show button only on mobile and when installable, for 10 seconds
 		window.addEventListener('beforeinstallprompt', (e) => {
-			if (!isMobile()) return;
+			if (!isMobile() || isAppInstalled()) return;
 			e.preventDefault();
 			deferredPrompt = e;
 			btn.style.display = 'flex';
@@ -233,9 +249,7 @@ if ('serviceWorker' in navigator) {
 			// Hide after 10 seconds if not clicked
 			clearTimeout(btn._hideTimeout);
 			btn._hideTimeout = setTimeout(() => {
-				btn.style.display = 'none';
-				btn.classList.remove('glow', 'floating');
-				btn.querySelector('.pwa-shimmer').style.display = 'none';
+				hideBtn();
 			}, 10000);
 		});
 
@@ -255,7 +269,7 @@ if ('serviceWorker' in navigator) {
 			deferredPrompt.prompt();
 			const { outcome } = await deferredPrompt.userChoice;
 			if (outcome === 'accepted') {
-				btn.style.display = 'none';
+				hideBtn();
 				confettiBurst();
 			}
 			deferredPrompt = null;
@@ -274,17 +288,13 @@ if ('serviceWorker' in navigator) {
 		// Hide on desktop resize
 		window.addEventListener('resize', () => {
 			if (!isMobile()) {
-				btn.style.display = 'none';
-				btn.classList.remove('glow', 'floating');
-				btn.querySelector('.pwa-shimmer').style.display = 'none';
+				hideBtn();
 			}
 		});
 
 		// Hide after install (for some browsers)
 		window.addEventListener('appinstalled', () => {
-			btn.style.display = 'none';
-			btn.classList.remove('glow', 'floating');
-			btn.querySelector('.pwa-shimmer').style.display = 'none';
+			hideBtn();
 			confettiBurst();
 		});
 	})();

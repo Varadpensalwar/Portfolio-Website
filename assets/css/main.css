@@ -3067,6 +3067,7 @@ input, select, textarea {
 			justify-content: center;
 			width: 50em;
 			-ms-flex: 1;
+			flex: 1;
 		}
 
 			.spotlights > section > .content > .inner {
@@ -4087,4 +4088,18 @@ input, select, textarea {
 	0% { opacity: 0.7; transform: translate(-50%, -50%) scale(1); }
 	80% { opacity: 0.3; }
 	100% { opacity: 0; transform: translate(-50%, -50%) scale(7.5); }
+}
+
+#pwa-install-btn .pwa-icon-wrap svg {
+  display: block;
+  transition: transform 0.3s cubic-bezier(.4,2,.3,1);
+}
+#pwa-install-btn.animated .pwa-icon-wrap svg {
+  animation: arrow-bounce 0.7s cubic-bezier(.4,2,.3,1);
+}
+@keyframes arrow-bounce {
+  0% { transform: translateY(0) scale(1); }
+  30% { transform: translateY(-5px) scale(1.12); }
+  60% { transform: translateY(2px) scale(0.96); }
+  100% { transform: translateY(0) scale(1); }
 }
