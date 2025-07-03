@@ -193,4 +193,96 @@ if ('serviceWorker' in navigator) {
 				}
 			});
 
+	// --- PWA Install Button: Mobile Only, Animated ---
+	(function() {
+		const btn = document.getElementById('pwa-install-btn');
+		const confettiContainer = document.getElementById('pwa-confetti');
+		let deferredPrompt = null;
+
+		// Utility: Detect mobile
+		function isMobile() {
+			return window.matchMedia('(max-width: 768px)').matches;
+		}
+
+		// Confetti burst
+		function confettiBurst() {
+			if (!confettiContainer) return;
+			const colors = ['#4f8cff', '#a084ee', '#f9d423', '#ff4e50'];
+			for (let i = 0; i < 24; i++) {
+				const piece = document.createElement('div');
+				piece.className = 'pwa-confetti-piece';
+				piece.style.left = (50 + Math.random() * 40 - 20) + 'vw';
+				piece.style.top = (60 + Math.random() * 10 - 5) + 'vh';
+				piece.style.background = `linear-gradient(135deg, ${colors[i%colors.length]}, #fff)`;
+				piece.style.transform = `rotate(${Math.random()*360}deg)`;
+				piece.style.animationDuration = (0.9 + Math.random()*0.7) + 's';
+				confettiContainer.appendChild(piece);
+				setTimeout(() => piece.remove(), 1400);
+			}
+		}
+
+		// Show button only on mobile and when installable, for 10 seconds
+		window.addEventListener('beforeinstallprompt', (e) => {
+			if (!isMobile()) return;
+			e.preventDefault();
+			deferredPrompt = e;
+			btn.style.display = 'flex';
+			btn.classList.add('animated', 'glow');
+			// Add shimmer
+			btn.querySelector('.pwa-shimmer').style.display = 'block';
+			setTimeout(() => btn.classList.remove('animated'), 900);
+			// Hide after 10 seconds if not clicked
+			clearTimeout(btn._hideTimeout);
+			btn._hideTimeout = setTimeout(() => {
+				btn.style.display = 'none';
+				btn.classList.remove('glow');
+				btn.querySelector('.pwa-shimmer').style.display = 'none';
+			}, 10000);
+		});
+
+		// Button click: show prompt, animate, confetti
+		btn.addEventListener('click', async function() {
+			if (!deferredPrompt) return;
+			btn.classList.add('animated');
+			setTimeout(() => btn.classList.remove('animated'), 900);
+			clearTimeout(btn._hideTimeout);
+			btn.classList.remove('glow');
+			btn.querySelector('.pwa-shimmer').style.display = 'none';
+			deferredPrompt.prompt();
+			const { outcome } = await deferredPrompt.userChoice;
+			if (outcome === 'accepted') {
+				btn.style.display = 'none';
+				confettiBurst();
+			}
+			deferredPrompt = null;
+		});
+
+		// Micro-interaction: bounce on tap/hover
+		btn.addEventListener('touchstart', () => {
+			btn.classList.add('animated');
+			setTimeout(() => btn.classList.remove('animated'), 700);
+		});
+		btn.addEventListener('mouseenter', () => {
+			btn.classList.add('animated');
+			setTimeout(() => btn.classList.remove('animated'), 700);
+		});
+
+		// Hide on desktop resize
+		window.addEventListener('resize', () => {
+			if (!isMobile()) {
+				btn.style.display = 'none';
+				btn.classList.remove('glow');
+				btn.querySelector('.pwa-shimmer').style.display = 'none';
+			}
+		});
+
+		// Hide after install (for some browsers)
+		window.addEventListener('appinstalled', () => {
+			btn.style.display = 'none';
+			btn.classList.remove('glow');
+			btn.querySelector('.pwa-shimmer').style.display = 'none';
+			confettiBurst();
+		});
+	})();
+
 })(jQuery);

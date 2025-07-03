@@ -3922,3 +3922,133 @@ input, select, textarea {
 			}
 
 		}
+
+/* --- PWA Install Button: Mobile Only, Animated --- */
+#pwa-install-btn {
+	display: none;
+}
+
+@media (max-width: 768px) {
+	#pwa-install-btn {
+		display: flex !important;
+		align-items: center;
+		justify-content: center;
+		gap: 0.3em;
+	}
+}
+
+#pwa-install-btn {
+	position: fixed;
+	right: 4vw;
+	bottom: 3vh;
+	z-index: 9999;
+	background: #fff;
+	color: #222;
+	border: none;
+	border-radius: 2em;
+	padding: 0.7em 1.5em;
+	font-size: 1.1em;
+	font-weight: 600;
+	box-shadow: 0 4px 24px rgba(44,62,80,0.13);
+	cursor: pointer;
+	transition: box-shadow 0.18s, background 0.18s, transform 0.18s;
+	overflow: visible;
+}
+#pwa-install-btn:active {
+	transform: scale(0.97);
+}
+#pwa-install-btn.animated {
+	animation: pwa-bounce 0.7s cubic-bezier(.4,2,.3,1);
+}
+@keyframes pwa-bounce {
+	0% { transform: scale(1); }
+	30% { transform: scale(1.12) translateY(-6px); }
+	60% { transform: scale(0.96) translateY(2px); }
+	100% { transform: scale(1); }
+}
+
+/* Orbiters */
+.pwa-orbiter {
+	position: absolute;
+	pointer-events: none;
+	border-radius: 50%;
+	background: linear-gradient(135deg, #4f8cff 60%, #a084ee 100%);
+	opacity: 0.7;
+	z-index: 1;
+	animation: orbiter-spin 2.2s linear infinite;
+}
+.orbiter-1 {
+	width: 18px; height: 18px;
+	top: -16px; left: 50%; margin-left: -9px;
+	animation-delay: 0s;
+}
+.orbiter-2 {
+	width: 12px; height: 12px;
+	bottom: -12px; left: 18%;
+	animation-delay: 0.7s;
+}
+.orbiter-3 {
+	width: 10px; height: 10px;
+	top: 50%; right: -14px; margin-top: -5px;
+	animation-delay: 1.2s;
+}
+@keyframes orbiter-spin {
+	0% { transform: rotate(0deg) translateY(0); }
+	100% { transform: rotate(360deg) translateY(0); }
+}
+
+/* Confetti */
+#pwa-confetti {
+	position: fixed;
+	left: 0; top: 0;
+	width: 100vw; height: 100vh;
+	pointer-events: none;
+	z-index: 10000;
+}
+.pwa-confetti-piece {
+	position: absolute;
+	width: 8px; height: 16px;
+	border-radius: 3px;
+	background: linear-gradient(135deg, #4f8cff, #a084ee, #f9d423, #ff4e50);
+	opacity: 0.85;
+	will-change: transform, opacity;
+	animation: confetti-fall 1.2s cubic-bezier(.4,2,.3,1) forwards;
+}
+@keyframes confetti-fall {
+	0% { opacity: 1; transform: translateY(0) scale(1) rotate(0deg); }
+	80% { opacity: 1; }
+	100% { opacity: 0; transform: translateY(120px) scale(0.7) rotate(360deg); }
+}
+
+/* Glowing pulse */
+#pwa-install-btn.glow {
+	box-shadow: 0 0 0 0 #4f8cff66, 0 4px 24px rgba(44,62,80,0.13);
+	animation: pwa-glow 1.2s infinite alternate cubic-bezier(.4,2,.3,1);
+}
+@keyframes pwa-glow {
+	0% { box-shadow: 0 0 0 0 #4f8cff66, 0 4px 24px rgba(44,62,80,0.13); }
+	100% { box-shadow: 0 0 16px 8px #a084ee55, 0 4px 24px rgba(44,62,80,0.13); }
+}
+/* Shimmer effect */
+#pwa-install-btn .pwa-shimmer {
+	position: absolute;
+	left: 0; top: 0; width: 100%; height: 100%;
+	border-radius: inherit;
+	background: linear-gradient(120deg, rgba(255,255,255,0) 60%, rgba(255,255,255,0.35) 80%, rgba(255,255,255,0) 100%);
+	opacity: 0.7;
+	pointer-events: none;
+	animation: shimmer-move 1.4s infinite linear;
+	z-index: 2;
+}
+@keyframes shimmer-move {
+	0% { transform: translateX(-80%); }
+	100% { transform: translateX(120%); }
+}
+/* More dynamic orbiters */
+.pwa-orbiter {
+	filter: blur(0.5px) brightness(1.2);
+	animation-timing-function: cubic-bezier(.4,2,.3,1);
+}
+.orbiter-1 { animation-duration: 1.7s; }
+.orbiter-2 { animation-duration: 2.3s; }
+.orbiter-3 { animation-duration: 1.2s; }

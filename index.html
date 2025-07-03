@@ -29,9 +29,13 @@
 
 <body class="is-preload">
 
-	<!-- Simple, Reliable PWA Install Button -->
+	<!-- Simple, Reliable PWA Install Button (Mobile Only, Animated) -->
 	<button id="pwa-install-btn"
-		style="display:none; position:fixed; right:2vw; bottom:2vh; z-index:9999; background:#fff; color:#222; border:none; border-radius:2em; padding:0.7em 1.5em; font-size:1.1em; font-weight:600; box-shadow:0 4px 24px rgba(44,62,80,0.13); cursor:pointer; transition:box-shadow 0.18s, background 0.18s;">
+		style="display:none; position:fixed; right:4vw; bottom:3vh; z-index:9999; background:#fff; color:#222; border:none; border-radius:2em; padding:0.7em 1.5em; font-size:1.1em; font-weight:600; box-shadow:0 4px 24px rgba(44,62,80,0.13); cursor:pointer; transition:box-shadow 0.18s, background 0.18s; overflow:visible;">
+		<span class="pwa-orbiter orbiter-1"></span>
+		<span class="pwa-orbiter orbiter-2"></span>
+		<span class="pwa-orbiter orbiter-3"></span>
+		<span class="pwa-shimmer"></span>
 		<span style="margin-right:0.5em; vertical-align:middle; display:inline-block;">
 			<svg width="20" height="20" viewBox="0 0 24 24" fill="none">
 				<path d="M12 2v14m0 0l-4-4m4 4l4-4" stroke="#2c3e50" stroke-width="2.2" stroke-linecap="round"
@@ -41,6 +45,7 @@
 		</span>
 		<span style="vertical-align:middle;">Install App</span>
 	</button>
+	<div id="pwa-confetti"></div>
 	<script>
 		let deferredPrompt;
 		const installBtn = document.getElementById('pwa-install-btn');
