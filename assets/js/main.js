@@ -221,33 +221,37 @@ if ('serviceWorker' in navigator) {
 			}
 		}
 
-		// Show button only on mobile and when installable, for 10 seconds
+		// Show button only on mobile and when installable, for 100ms
 		window.addEventListener('beforeinstallprompt', (e) => {
 			if (!isMobile()) return;
 			e.preventDefault();
 			deferredPrompt = e;
 			btn.style.display = 'flex';
-			btn.classList.add('animated', 'glow');
-			// Add shimmer
+			btn.classList.add('animated', 'glow', 'floating');
 			btn.querySelector('.pwa-shimmer').style.display = 'block';
 			setTimeout(() => btn.classList.remove('animated'), 900);
-			// Hide after 10 seconds if not clicked
+			// Hide after 100ms if not clicked
 			clearTimeout(btn._hideTimeout);
 			btn._hideTimeout = setTimeout(() => {
 				btn.style.display = 'none';
-				btn.classList.remove('glow');
+				btn.classList.remove('glow', 'floating');
 				btn.querySelector('.pwa-shimmer').style.display = 'none';
-			}, 10000);
+			}, 100);
 		});
 
-		// Button click: show prompt, animate, confetti
-		btn.addEventListener('click', async function() {
+		// Button click: show prompt, animate, confetti, ripple
+		btn.addEventListener('click', async function(e) {
 			if (!deferredPrompt) return;
 			btn.classList.add('animated');
 			setTimeout(() => btn.classList.remove('animated'), 900);
 			clearTimeout(btn._hideTimeout);
-			btn.classList.remove('glow');
+			btn.classList.remove('glow', 'floating');
 			btn.querySelector('.pwa-shimmer').style.display = 'none';
+			// Ripple effect
+			const ripple = document.createElement('span');
+			ripple.className = 'pwa-ripple';
+			btn.appendChild(ripple);
+			setTimeout(() => ripple.remove(), 350);
 			deferredPrompt.prompt();
 			const { outcome } = await deferredPrompt.userChoice;
 			if (outcome === 'accepted') {
@@ -271,7 +275,7 @@ if ('serviceWorker' in navigator) {
 		window.addEventListener('resize', () => {
 			if (!isMobile()) {
 				btn.style.display = 'none';
-				btn.classList.remove('glow');
+				btn.classList.remove('glow', 'floating');
 				btn.querySelector('.pwa-shimmer').style.display = 'none';
 			}
 		});
@@ -279,7 +283,7 @@ if ('serviceWorker' in navigator) {
 		// Hide after install (for some browsers)
 		window.addEventListener('appinstalled', () => {
 			btn.style.display = 'none';
-			btn.classList.remove('glow');
+			btn.classList.remove('glow', 'floating');
 			btn.querySelector('.pwa-shimmer').style.display = 'none';
 			confettiBurst();
 		});

@@ -4052,3 +4052,39 @@ input, select, textarea {
 .orbiter-1 { animation-duration: 1.7s; }
 .orbiter-2 { animation-duration: 2.3s; }
 .orbiter-3 { animation-duration: 1.2s; }
+
+#pwa-install-btn {
+	height: 36px;
+	min-width: 36px;
+	padding: 0.1em 0.7em;
+	font-size: 0.8em;
+	border-radius: 1.2em;
+}
+#pwa-install-btn span[style*="vertical-align:middle;"] {
+	font-size: 0.8em;
+}
+/* Modern floating animation */
+#pwa-install-btn.floating {
+	animation: pwa-float 1.6s ease-in-out infinite alternate;
+}
+@keyframes pwa-float {
+	0% { transform: translateY(0); }
+	100% { transform: translateY(-7px); }
+}
+/* Fast ripple effect on tap */
+#pwa-install-btn .pwa-ripple {
+	position: absolute;
+	left: 50%; top: 50%;
+	width: 8px; height: 8px;
+	background: rgba(79,140,255,0.18);
+	border-radius: 50%;
+	pointer-events: none;
+	transform: translate(-50%, -50%) scale(1);
+	animation: pwa-ripple-anim 0.35s cubic-bezier(.4,2,.3,1);
+	z-index: 3;
+}
+@keyframes pwa-ripple-anim {
+	0% { opacity: 0.7; transform: translate(-50%, -50%) scale(1); }
+	80% { opacity: 0.3; }
+	100% { opacity: 0; transform: translate(-50%, -50%) scale(7.5); }
+}
