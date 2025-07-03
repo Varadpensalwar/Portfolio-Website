@@ -944,7 +944,7 @@
         }
     </script>
 
-	<!-- Ultra-Animated, Modern PWA Install Button (Mobile Only, 10s) -->
+	<!-- Ultra-Animated, Modern PWA Install Button (Mobile Only, 9s) -->
 	<button id="pwa-install-btn" style="display:none;" aria-label="Install App">
 		<span class="pwa-btn-orbiters">
 			<span class="pwa-orb pwa-orb1 pwa-orb-star">
@@ -1023,7 +1023,7 @@
 		pwaBtnTimeout = setTimeout(() => {
 			installBtn.style.opacity = '0';
 			pwaBtnHideTimeout = setTimeout(() => { installBtn.style.display = 'none'; }, 500);
-		}, 10000);
+		}, 9000);
 	});
 	installBtn.addEventListener('click', (ev) => {
 		// Ripple effect
