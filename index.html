@@ -22,6 +22,9 @@
 
 	<!-- Theme color -->
 	<meta name="theme-color" content="#000000">
+
+	<!-- Glider.js CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css">
 </head>
 
 <body class="is-preload">
@@ -128,20 +131,84 @@
 			<div class="inner">
 				<h2>Certifications</h2>
 				<p>Here are some of my certifications. (More coming soon!)</p>
-				<div class="features certifications-gallery" style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
-					<!-- Example certificate image placeholders -->
-					<div style="text-align: center;">
-						<img src="images/certificate of Introduction to Generative AI.png" alt="Certificate 1" style="max-width: 200px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
-						<p>Certificate Title 1</p>
+				<div class="glider-contain">
+					<div class="glider">
+						<div class="certificate-card">
+							<img src="images/certificate of Introduction to Generative AI.png" alt="Introduction to Generative AI" />
+							<p>Introduction to Generative AI</p>
+						</div>
+						<div class="certificate-card">
+							<img src="images/LLMs & LangChain and Workflow Design Certificate.pdf.png" alt="LLMs & LangChain and Workflow Design" />
+							<p>LLMs & LangChain and Workflow Design</p>
+						</div>
+						<!-- Add more certificate-card divs as needed -->
 					</div>
-					<div style="text-align: center;">
-						<img src="images/LLMs & LangChain and Workflow Design Certificate.pdf.png" alt="Certificate 2" style="max-width: 200px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
-						<p>Certificate Title 2</p>
-					</div>
-					<!-- Add more certificate images as needed -->
+					<button class="glider-prev">«</button>
+					<button class="glider-next">»</button>
+					<div role="tablist" class="dots"></div>
 				</div>
 			</div>
 		</section>
+
+		<!-- Add custom styles for the slider and cards -->
+		<style>
+			.glider-contain {
+				margin: 0 auto;
+				max-width: 900px;
+				text-align: center;
+			}
+			.glider {
+				margin: 2rem 0;
+			}
+			.certificate-card {
+				background: #181818;
+				border-radius: 12px;
+				box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+				padding: 1rem;
+				margin: 0 10px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				color: #fff;
+			}
+			.certificate-card img {
+				max-width: 200px;
+				border-radius: 8px;
+				margin-bottom: 0.5rem;
+				box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+			}
+			.glider-prev, .glider-next {
+				background: #222;
+				color: #fff;
+				border: none;
+				border-radius: 50%;
+				width: 36px;
+				height: 36px;
+				font-size: 1.5rem;
+				margin: 0 10px;
+				cursor: pointer;
+				transition: background 0.2s;
+			}
+			.glider-prev:hover, .glider-next:hover {
+				background: #444;
+			}
+			.dots {
+				margin-top: 1rem;
+			}
+			.dots button {
+				background: #444;
+				border: none;
+				border-radius: 50%;
+				width: 12px;
+				height: 12px;
+				margin: 0 4px;
+				cursor: pointer;
+				transition: background 0.2s;
+			}
+			.dots .active {
+				background: #fff;
+			}
+		</style>
 
 		<!-- Four -->
 		<section id="four" class="wrapper style1 fade-up">
@@ -219,6 +286,46 @@
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 	<script src="sw.js"></script>
+
+	<!-- Glider.js JS -->
+	<script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+	<script>
+		window.addEventListener('DOMContentLoaded', function(){
+			new Glider(document.querySelector('.glider'), {
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				draggable: true,
+				dots: '.dots',
+				arrows: {
+					prev: '.glider-prev',
+					next: '.glider-next'
+				},
+				responsive: [
+					{
+						breakpoint: 600,
+						settings: {
+							slidesToShow: 1.2,
+							slidesToScroll: 1
+						}
+					},
+					{
+						breakpoint: 900,
+						settings: {
+							slidesToShow: 2.2,
+							slidesToScroll: 1
+						}
+					},
+					{
+						breakpoint: 1200,
+						settings: {
+							slidesToShow: 3,
+							slidesToScroll: 1
+						}
+					}
+				]
+			});
+		});
+	</script>
 
 </body>
 
