@@ -1,14 +1,12 @@
-// sw.js
 const CACHE_NAME = 'my-pwa-cache-v1';
 
 // Core assets to cache immediately
 const CORE_ASSETS = [
     '/',
     '/index.html',
-    '/assets\\css\\main.css',
-    '/assets\\js\\main.js',
+    '/assets/css/main.css',
+    '/assets/js/main.js',
     '/manifest.json'
-  
 ];
 
 // Install event - cache core files
@@ -93,7 +91,7 @@ self.addEventListener('fetch', event => {
           return caches.match(event.request)
             .then(cachedResponse => {
               // Return cached HTML or offline page
-              return cachedResponse || caches.match('/offline/offline.html');
+              return cachedResponse || caches.match('/offline.html');
             });
         })
     );
@@ -132,7 +130,7 @@ self.addEventListener('fetch', event => {
           .catch(() => {
             // For image requests, maybe return a placeholder
             if (event.request.url.match(/\.(jpg|jpeg|png|gif|svg)$/)) {
-              return caches.match('/offline/offline-assets/ghost-img.png');
+              return caches.match('/offline-assets/ghost-img.png');
             }
             
             // For other requests, let the error propagate
