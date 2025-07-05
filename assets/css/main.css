@@ -30,6 +30,25 @@ footer, header, hgroup, menu, nav, section {
 
 body {
 	line-height: 1;
+	background: #000 !important;
+	position: relative;
+	overflow-x: hidden;
+}
+
+#particles-bg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 0;
+	pointer-events: none;
+	background: transparent;
+}
+
+.container, #header, #floating-home-btn {
+	position: relative;
+	z-index: 1;
 }
 
 ol, ul {
@@ -4206,20 +4225,25 @@ input, select, textarea {
 /* Premium Modern Projects Title Design */
 .major {
 	font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-	font-size: 4rem;
+	font-size: 3rem;
 	font-weight: 800;
-	background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
-	background-size: 400% 400%;
+	background: linear-gradient(90deg, #181c20 0%, #232946 40%, #1a2233 70%, #18324b 100%);
+	background-size: 200% 200%;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
-	position: relative;
-	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-	letter-spacing: -0.03em;
+	color: #e0e7ef;
+	text-shadow: 0 2px 8px rgba(20,30,40,0.7);
+	letter-spacing: 1.5px;
+	margin-bottom: 2.5rem;
 	text-align: center;
-	margin-bottom: 3rem;
-	animation: gradientShift 6s ease-in-out infinite;
-	text-shadow: 0 0 30px rgba(102, 126, 234, 0.3);
+	animation: gradientMove 8s ease-in-out infinite;
+}
+
+@keyframes gradientMove {
+	0% { background-position: 0% 50%; }
+	50% { background-position: 100% 50%; }
+	100% { background-position: 0% 50%; }
 }
 
 .major::before {
@@ -4486,4 +4510,51 @@ input, select, textarea {
 		font-size: 2rem;
 		margin-bottom: 1.5rem;
 	}
+}
+
+.card.text-white.bg-dark {
+	background: #111 !important;
+	border: 1px solid #222 !important;
+	box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05) !important;
+	backdrop-filter: none;
+	max-width: 450px;
+	margin: 0 auto 15px auto;
+}
+
+.card-header {
+	background: linear-gradient(90deg, #e0e7ef 0%, #b3e5fc 100%) !important;
+	border-bottom: 1px solid #b3e5fc !important;
+	color: #222 !important;
+	font-weight: 700;
+	text-shadow: 0 0 8px #fff, 0 0 2px #b3e5fc;
+}
+
+.card-title {
+	color: #e0e7ef !important;
+	text-shadow: 0 0 10px #b3e5fc, 0 0 2px #fff;
+}
+
+.card-text {
+	color: #cfd8dc !important;
+}
+
+.card-footer {
+	background: #181c20 !important;
+	border-top: 1px solid #222 !important;
+}
+
+.fab, .fas {
+	color: #b3e5fc !important;
+	transition: all 0.3s ease;
+}
+
+.fab:hover, .fas:hover {
+	color: #fff !important;
+	text-shadow: 0 0 15px #b3e5fc;
+	transform: scale(1.2);
+}
+
+.major {
+	color: #e0e7ef !important;
+	text-shadow: 0 0 20px #b3e5fc, 0 0 2px #fff;
 }
