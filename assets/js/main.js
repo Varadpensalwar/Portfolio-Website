@@ -194,3 +194,33 @@ if ('serviceWorker' in navigator) {
 			});
 
 })(jQuery);
+
+// Header scroll behavior
+$(document).ready(function() {
+	var $header = $('#header');
+	var lastScrollTop = 0;
+	var scrollThreshold = 50; // Reduced threshold for better responsiveness
+	
+	$(window).scroll(function() {
+		var scrollTop = $(this).scrollTop();
+		
+		// Hide/show header based on scroll direction
+		if (Math.abs(scrollTop - lastScrollTop) > scrollThreshold) {
+			if (scrollTop > lastScrollTop && scrollTop > 150) {
+				// Scrolling down - hide header
+				$header.addClass('scrolled');
+			} else {
+				// Scrolling up - show header
+				$header.removeClass('scrolled');
+			}
+			lastScrollTop = scrollTop;
+		}
+	});
+	
+	// Show header when at top of page
+	$(window).scroll(function() {
+		if ($(this).scrollTop() < 100) {
+			$header.removeClass('scrolled');
+		}
+	});
+});

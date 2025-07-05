@@ -89,6 +89,8 @@
 			border: 1px solid #333 !important;
 			box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.05) !important;
 			backdrop-filter: blur(10px);
+			max-width: 450px;
+			margin: 0 auto 15px auto;
 		}
 
 		.card.text-white.bg-dark:hover {
@@ -127,9 +129,16 @@
 			letter-spacing: 2px;
 		}
 
-		/* Floating animation for cards */
+		/* Card deck spacing and floating animation */
+		.card-deck {
+			justify-content: center;
+			gap: 8px;
+			margin-bottom: 20px;
+		}
+		
 		.card-deck .card {
 			animation: float 6s ease-in-out infinite;
+			flex: 0 0 auto;
 		}
 
 		.card-deck:nth-child(odd) .card {
@@ -163,10 +172,15 @@
 	<header id="header">
 		<nav>
 			<ul>
-				<li><a href="index.html" style="font-size: 10pt">Home</a></li>
+				<!-- Removed Home button from header navigation -->
 			</ul>
 		</nav>
 	</header>
+
+	<!-- Always Visible Home Button -->
+	<div id="floating-home-btn">
+		<a href="index.html" class="home-btn">Home</a>
+	</div>
 
 	<!-- Wrapper -->
 	<div class="container">
@@ -207,7 +221,7 @@
 					<p class="card-text">
 						Experience an innovative music streaming platform that not only
 						offers a vast library of tracks but also lets you see in real time
-						who’s tuned in to each song, making it easy to discover who shares
+						who's tuned in to each song, making it easy to discover who shares
 						your taste in music.
 					</p>
 					<p class="card-text">
