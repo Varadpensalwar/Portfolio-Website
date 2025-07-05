@@ -25,6 +25,7 @@
 	<link rel="shortcut icon" type="image/png" href="images/favicon.png" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" />
@@ -194,7 +195,17 @@
 		<div class="card-deck p-3">
 			<div class="card text-white bg-dark">
 				<div class="card-header">Featured 🚀</div>
-				<img class="card-img-top" src="images/PrepWise.png" alt="Card image cap" />
+				<!-- Swiper image slider for project images -->
+				<div class="swiper project-swiper">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide"><img class="card-img-top" src="images/PrepWise.png" alt="PrepWise screenshot 1" /></div>
+						<div class="swiper-slide"><img class="card-img-top" src="images/project.png" alt="PrepWise screenshot 2" /></div>
+						<div class="swiper-slide"><img class="card-img-top" src="images/Balaji Dresses Biloli.png" alt="PrepWise screenshot 2" /></div>
+						<div class="swiper-slide"><img class="card-img-top" src="images/blog_SS.png" alt="PrepWise screenshot 2" /></div>
+						<div class="swiper-slide"><img class="card-img-top" src="images/Pets Vibe.png" alt="PrepWise screenshot 2" /></div>
+						<div class="swiper-slide"><img class="card-img-top" src="images/SpotifyButBetter.png" alt="PrepWise screenshot 2" /></div>
+					</div>
+				</div>
 				<div class="card-body">
 					<h4 class="card-title">PrepWise</h4>
 					<p class="card-text">
@@ -415,6 +426,21 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
 		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			const swipers = document.querySelectorAll('.project-swiper');
+			swipers.forEach(function(swiperEl) {
+				new Swiper(swiperEl, {
+					effect: 'fade',
+					loop: true,
+					autoplay: { delay: 2200, disableOnInteraction: false },
+					fadeEffect: { crossFade: true },
+					allowTouchMove: false,
+				});
+			});
+		});
+	</script>
 </body>
 
 </html>

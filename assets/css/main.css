@@ -4558,3 +4558,60 @@ input, select, textarea {
 	color: #e0e7ef !important;
 	text-shadow: 0 0 20px #b3e5fc, 0 0 2px #fff;
 }
+
+.project-swiper {
+	width: 100% !important;
+	max-width: 100vw !important;
+	height: 200px;
+	box-sizing: border-box;
+	margin-bottom: 0.5rem;
+	border-radius: 12px 12px 0 0;
+	overflow: hidden;
+	background: #181c20;
+}
+.project-swiper img.card-img-top {
+	width: 100% !important;
+	max-width: 100vw !important;
+	height: 200px;
+	display: block;
+	object-fit: cover;
+	box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+	.card.text-white.bg-dark {
+		max-width: 98vw;
+		width: 100%;
+	}
+	.project-swiper {
+		height: 180px;
+		border-radius: 10px 10px 0 0;
+		width: 100% !important;
+		max-width: 100vw !important;
+	}
+	.project-swiper img.card-img-top {
+		height: 180px;
+		object-fit: cover;
+		width: 100% !important;
+		max-width: 100vw !important;
+	}
+}
+
+@media (max-width: 480px) {
+	.card.text-white.bg-dark {
+		max-width: 99vw;
+		width: 100%;
+	}
+	.project-swiper {
+		height: 150px;
+		border-radius: 8px 8px 0 0;
+		width: 100% !important;
+		max-width: 100vw !important;
+	}
+	.project-swiper img.card-img-top {
+		height: 150px;
+		object-fit: cover;
+		width: 100% !important;
+		max-width: 100vw !important;
+	}
+}
