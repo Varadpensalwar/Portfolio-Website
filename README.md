@@ -2,7 +2,7 @@
 
 Welcome to my personal portfolio website! This is where I showcase my journey as an AI/ML enthusiast and aspiring programmer.
 
-🌐 **Live Website**: [https://varadpensalwar.github.io/](https://varadpensalwar.github.io/)
+🌐 **Live Website**: [https://varadpensalwar.vercel.app/](https://varadpensalwar.vercel.app/)
 
 ## About Me
 
