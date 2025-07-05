@@ -37,7 +37,123 @@
 		}
 
 		body {
-			background-image: url("assets/css/images/Dragon-Scales.svg") !important;
+			background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 25%, #0f0f0f 50%, #1a1a1a 75%, #0a0a0a 100%);
+			position: relative;
+			overflow-x: hidden;
+		}
+
+		body::before {
+			content: '';
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: 
+				radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
+				radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.1) 0%, transparent 50%),
+				radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.05) 0%, transparent 50%);
+			pointer-events: none;
+			z-index: -1;
+		}
+
+		body::after {
+			content: '';
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-image: 
+				radial-gradient(2px 2px at 20px 30px, #333, transparent),
+				radial-gradient(2px 2px at 40px 70px, #444, transparent),
+				radial-gradient(1px 1px at 90px 40px, #555, transparent),
+				radial-gradient(1px 1px at 130px 80px, #444, transparent),
+				radial-gradient(2px 2px at 160px 30px, #333, transparent);
+			background-repeat: repeat;
+			background-size: 200px 100px;
+			animation: stars 20s linear infinite;
+			opacity: 0.3;
+			pointer-events: none;
+			z-index: -1;
+		}
+
+		@keyframes stars {
+			from { transform: translateY(0px); }
+			to { transform: translateY(-100px); }
+		}
+
+		/* Dark theme for cards */
+		.card.text-white.bg-dark {
+			background: linear-gradient(145deg, #1a1a1a 0%, #0d0d0d 100%) !important;
+			border: 1px solid #333 !important;
+			box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.05) !important;
+			backdrop-filter: blur(10px);
+		}
+
+		.card.text-white.bg-dark:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1) !important;
+			transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+		}
+
+		.card-header {
+			background: linear-gradient(90deg, #2a2a2a 0%, #1a1a1a 100%) !important;
+			border-bottom: 1px solid #444 !important;
+			color: #00d4ff !important;
+			font-weight: 600;
+			text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+		}
+
+		.card-title {
+			color: #ffffff !important;
+			text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+		}
+
+		.card-text {
+			color: #cccccc !important;
+		}
+
+		.card-footer {
+			background: linear-gradient(90deg, #1a1a1a 0%, #0d0d0d 100%) !important;
+			border-top: 1px solid #444 !important;
+		}
+
+		/* Enhanced title styling */
+		.major {
+			color: #ffffff !important;
+			text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+			font-weight: 700;
+			letter-spacing: 2px;
+		}
+
+		/* Floating animation for cards */
+		.card-deck .card {
+			animation: float 6s ease-in-out infinite;
+		}
+
+		.card-deck:nth-child(odd) .card {
+			animation-delay: 0s;
+		}
+
+		.card-deck:nth-child(even) .card {
+			animation-delay: 2s;
+		}
+
+		@keyframes float {
+			0%, 100% { transform: translateY(0px); }
+			50% { transform: translateY(-10px); }
+		}
+
+		/* Glowing effect for links */
+		.fab, .fas {
+			transition: all 0.3s ease;
+		}
+
+		.fab:hover, .fas:hover {
+			color: #00d4ff !important;
+			text-shadow: 0 0 15px rgba(0, 212, 255, 0.8);
+			transform: scale(1.2);
 		}
 	</style>
 </head>
