@@ -1044,7 +1044,7 @@
 
 
 @media(max-width:700px){
-  .actions{flex-direction:column;align-items:center;}
+  .actions{flex-direction:column;align-items:center;gap:10px;margin-bottom:0;}
   .actions .button{width:100%;max-width:280px;text-align:center;}
   .about-card{padding:24px;}
 }
@@ -1063,6 +1063,10 @@
 .button.ripple{position:relative;overflow:hidden;}
 .button.ripple::after{content:'';position:absolute;left:50%;top:50%;width:20px;height:20px;background:rgba(0,212,255,.4);border-radius:50%;transform:translate(-50%,-50%) scale(0);opacity:0;transition:transform .6s,opacity .6s;}
 .button.ripple:hover::after{transform:translate(-50%,-50%) scale(8);opacity:1;}
+
+/* ==== Section Background Override ==== */
+.wrapper.style2,.wrapper.style3{background:#1a1a1a!important;}
+#two{background:#1a1a1a!important;}
 
 /* ==== Premium Lit-Edge Boxes & Certificates ==== */
 .about-card{
