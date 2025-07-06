@@ -303,6 +303,23 @@
                <a href="https://x.com/PensalwarVarad" class="fab fa-twitter"></a>
                <a href="https://www.linkedin.com/in/varad-pensalwar/" class="fab fa-linkedin-in"></a>
                <a href="https://github.com/Varadpensalwar" class="fab fa-github"></a>
+               <a href="#" class="fab fa-telegram" onclick="openTelegram(event)"></a>
+
+<script>
+function openTelegram(event) {
+    event.preventDefault(); // Prevent default link behavior
+
+    // Simple mobile detection
+    if (/Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent)) {
+        // Mobile device - open Telegram app
+        window.location.href = 'https://t.me/varadpensalwar';
+    } else {
+        // Desktop device - open Telegram web
+        window.location.href = 'https://web.telegram.org/k/#@varadpensalwar';
+    }
+}
+</script>
+
              </div>
            </div>
         </div>
