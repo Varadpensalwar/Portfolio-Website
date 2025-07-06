@@ -1064,6 +1064,35 @@
 .button.ripple::after{content:'';position:absolute;left:50%;top:50%;width:20px;height:20px;background:rgba(0,212,255,.4);border-radius:50%;transform:translate(-50%,-50%) scale(0);opacity:0;transition:transform .6s,opacity .6s;}
 .button.ripple:hover::after{transform:translate(-50%,-50%) scale(8);opacity:1;}
 
+/* ==== Premium Lit-Edge Boxes & Certificates ==== */
+.about-card{
+  border:2px solid rgba(0,212,255,0.35);
+  box-shadow:0 0 6px rgba(0,212,255,0.25), 0 0 12px rgba(0,255,210,0.25);
+  transition:box-shadow .35s ease, border-color .35s ease;
+}
+.about-card:hover{
+  box-shadow:0 0 14px rgba(0,212,255,0.45), 0 0 28px rgba(0,255,210,0.45), 0 16px 48px rgba(0,212,255,0.28);
+  border-color:rgba(0,212,255,0.6);
+}
+.project-card{
+  border:2px solid rgba(160,132,238,0.35);
+  box-shadow:0 0 6px rgba(160,132,238,0.25), 0 0 12px rgba(255,79,255,0.25), 0 8px 32px rgba(0,0,0,0.45);
+  transition:box-shadow .35s ease, border-color .35s ease;
+}
+.project-card:hover{
+  box-shadow:0 0 14px rgba(160,132,238,0.45), 0 0 28px rgba(255,79,255,0.45), 0 16px 48px rgba(79,140,255,0.28);
+  border-color:rgba(160,132,238,0.6);
+}
+.certificate-card img, .mobile-cert-card img{
+  border:2px solid rgba(79,140,255,0.3) !important;
+  box-shadow:0 0 6px rgba(79,140,255,0.25), 0 0 12px rgba(160,132,238,0.25) !important;
+  transition:box-shadow .35s ease, border-color .35s ease;
+}
+.certificate-card img:hover, .mobile-cert-card img:hover{
+  box-shadow:0 0 12px rgba(79,140,255,0.45), 0 0 24px rgba(160,132,238,0.45) !important;
+  border-color:rgba(79,140,255,0.6) !important;
+}
+
 
 /* responsive */
 @media(max-width:768px){
