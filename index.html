@@ -25,6 +25,7 @@
 
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 </head>
 
 <body class="is-preload">
@@ -83,67 +84,99 @@
 
     <!-- One -->
     <section id="one" class="wrapper style2 spotlights">
-      <section>
-        <a class="image"><img src="images/Me.jpeg" alt="" data-position="center center" /></a>
-        <div class="content">
-          <div class="inner">
-            <h2>About Me</h2>
-
-            <p>
-              I am Varad, an aspiring Programmer recently graduated with a B.Tech
-              <b>Major</b> in <b>Artificial Intelligence and Machine Learning </b> from
-              the
-              <a href="https://www.sanjayghodawatuniversity.ac.in/"><b>Sanjay Ghodawat University, Kolhapur</b></a>. On
-              top of that I am Generative AI Enthusiast, who loves to
-              bulid Agents.
+      <!-- ===== Neon Quantum About Section ===== -->
+      <section id="about" class="wrapper style2 fade-up">
+        <div class="inner">
+          <h2 class="major section-title">About Me</h2>
+          <div class="about-card">
+          <div class="text-zone">
+            <h2 class="headline" data-splitting><span class="light">Hello,&nbsp;I'm</span> <span class="gradient-name">Varad</span></h2>
+            <h3 class="subline" data-splitting><span id="typed-role"></span></h3>
+            <p class="about-intro">
+              Crafting <span class="glow">intelligent products</span> where <span class="glow">machine-learning</span> collides with <span class="glow">pixel-perfect UI</span>. Turning abstract thoughts into <span class="glow">production-ready</span> magic—fast.
             </p>
+            <div class="stats">
+              <div class="stat hover-gradient"><h4>20+</h4><p>Projects</p></div>
+              <div class="stat hover-gradient"><h4>5+</h4><p>Certifications</p></div>
+              <div class="stat hover-gradient"><h4>3</h4><p>Years&nbsp;Experience</p></div>
+            </div>
 
+            
+    
             <ul class="actions">
-              <li>
-                <!-- <a href="about.html" class="button">Learn more about me</a> -->
-              </li>
-            </ul>
-          </div>
+                <li><a href="#contact" class="button">Let's Collaborate</a></li>
+                <li><a href="Varad_Pensalwar_Resume.pdf" class="button alt" target="_blank">Download CV</a></li>
+              </ul>
+          </div><!-- about-card end -->
         </div>
       </section>
 
-      <section id="three">
-        <a href="projects.html" class="image"><img src="images/project.png" alt="" data-position="center center" /></a>
-        <div class="content">
-          <div class="inner">
-            <h2>Projects</h2>
-            <p>
-              I tend to strongly believe in this and project based learning
-              has been my go-to policy for quite some time now !
-            </p>
-            <p>Checkout some of my recent projects below &#128512;</p>
-            <ul class="actions">
-              <li>
-                <a href="projects.html" class="button">Explore Projects</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-      <section>
-        <a href="Varad Pensalwar.pdf" class="image">
-          <img src="images/resume.jpg" alt="" data-position="center center" />
-        </a>
-        <div class="content">
-          <div class="inner">
-            <h2>My Resume</h2>
-            <p>
-              Just another lonesome traveller willing to conceive, how and why
-              this world works.🗝️
-            </p>
 
-            <p>A learner in Artificial Intelligence.</p>
-            <ul class="actions">
-              <li>
-                <a href="Varad Pensalwar.pdf" class="button">Download My Resume</a>
-              </li>
-            </ul>
+      <!-- === Modern Projects Carousel === -->
+      <section id="three" class="wrapper style2 fade-up">
+        <div class="inner">
+          <h2 class="major section-title">Featured Projects</h2>
+
+          <div class="swiper projects-swiper">
+            <div class="swiper-wrapper">
+              <!-- PrepWise -->
+              <div class="swiper-slide">
+                <div class="project-card">
+                  <img src="images/PrepWise.png" alt="PrepWise" />
+                  <h3>PrepWise</h3>
+                  <p>AI-powered mock interview platform that simulates real interviews and offers instant feedback.</p>
+                  <div class="links">
+                    <a href="https://github.com/Varadpensalwar/PrepWise.git" class="fab fa-github" target="_blank"></a>
+                    <a href="https://prepwise-chi-wine.vercel.app/" class="fas fa-external-link-alt" target="_blank"></a>
+                  </div>
+                </div>
+              </div>
+              <!-- Spotify but Better -->
+              <div class="swiper-slide">
+                <div class="project-card">
+                  <img src="images/SpotifyButBetter.png" alt="Spotify but better" />
+                  <h3>Spotify but Better</h3>
+                  <p>Realtime collaborative music player showing who’s listening & enabling chat rooms.</p>
+                  <div class="links">
+                    <a href="https://github.com/Varadpensalwar/realtime-spotify-clone.git" class="fab fa-github" target="_blank"></a>
+                    <a href="https://realtime-spotify-clone-6az4.onrender.com/" class="fas fa-external-link-alt" target="_blank"></a>
+                  </div>
+                </div>
+              </div>
+              <!-- Chatty -->
+              <div class="swiper-slide">
+                <div class="project-card">
+                  <img src="images/Chatty.png" alt="Chatty" />
+                  <h3>Chatty</h3>
+                  <p>Anonymous chat platform to meet new people without sharing personal info.</p>
+                  <div class="links">
+                    <a href="https://github.com/Varadpensalwar/ziggy.git" class="fab fa-github" target="_blank"></a>
+                    <a href="https://chatty-tc2h.onrender.com/" class="fas fa-external-link-alt" target="_blank"></a>
+                  </div>
+                </div>
+              </div>
+              <!-- Pets Vibe -->
+              <div class="swiper-slide">
+                <div class="project-card">
+                  <img src="images/Pets Vibe.png" alt="Pets Vibe" />
+                  <h3>Pets Vibe</h3>
+                  <p>Community hub for pet lovers to share stories, photos and advice.</p>
+                  <div class="links">
+                    <a href="https://github.com/Varadpensalwar/Pets-Vibe.git" class="fab fa-github" target="_blank"></a>
+                    <a href="https://pets-vibe.infinityfreeapp.com/index.php?i=3#" class="fas fa-external-link-alt" target="_blank"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Swiper controls -->
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
           </div>
+
+          <ul class="actions" style="margin-top:2rem;">
+            <li><a href="projects.html" class="button primary">View All Projects</a></li>
+          </ul>
         </div>
       </section>
     </section>
@@ -151,7 +184,7 @@
     <!-- Two -->
     <section id="two" class="wrapper style3 fade-up">
       <div class="inner">
-        <h2>Certifications</h2>
+        <h2 class="major section-title">Certifications</h2>
 
         <!-- Desktop Certifications (unchanged) -->
         <div class="certifications-desktop">
@@ -206,29 +239,34 @@
         <div class="mobile-slider-container">
           <div class="swiper mobile-certs-swiper">
             <div class="swiper-wrapper">
+              <!-- PrepWise -->
               <div class="swiper-slide">
                 <div class="mobile-cert-card">
                   <img src="images/certificate of Introduction to Generative AI.png"
                     alt="Introduction to Generative AI" />
                 </div>
               </div>
+              <!-- Spotify but Better -->
               <div class="swiper-slide">
                 <div class="mobile-cert-card">
                   <img src="images/LLMs & LangChain and Workflow Design Certificate.pdf.png"
                     alt="LLMs & LangChain and Workflow Design" />
                 </div>
               </div>
+              <!-- Chatty -->
               <div class="swiper-slide">
                 <div class="mobile-cert-card">
                   <img src="images/python_basic certificate.pdf.png" alt="Python Basic Certificate" />
                 </div>
               </div>
+              <!-- Pets Vibe -->
               <div class="swiper-slide">
                 <div class="mobile-cert-card">
                   <img src="images/Retrieval Augmented Generation for Production with LangChain & LlamaIndex-1.png"
                     alt="Introduction to Large Language Models" />
                 </div>
               </div>
+              <!-- Pets Vibe -->
               <div class="swiper-slide">
                 <div class="mobile-cert-card">
                   <img src="images/Data Science Certificate-1.png"
@@ -363,7 +401,7 @@
     .certificate-card img:hover,
     .certificate-card img:focus {
       transform: scale(1.09) translateY(-10px);
-      box-shadow: 0 16px 48px 0 rgba(79, 140, 255, 0.28), 0 0 0 8px #4f8cff33;
+      box-shadow: 0 16px 48px rgba(79, 140, 255, 0.28), 0 0 0 8px #4f8cff33;
       filter: brightness(1.1) contrast(1.1) saturate(1.12);
       outline: 2.5px solid #4f8cff;
       outline-offset: 2px;
@@ -846,6 +884,361 @@
       height: 100vh;
       z-index: 10000;
     }
+    /* ---- Projects Carousel Styles ---- */
+    .projects-swiper {
+      padding: 20px 0;
+    }
+    .project-card {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 24px 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.45);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      text-align: center;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+    .project-card:hover {
+      transform: translateY(-12px) scale(1.03);
+      box-shadow: 0 16px 48px rgba(79,140,255,0.28);
+    }
+    .project-card img {
+      width:100%;
+      height:180px;
+      object-fit:cover;
+      border-radius:8px;
+      margin-bottom:16px;
+    }
+    .project-card h3{margin:0 0 10px;font-size:1.2rem;color:#fff;}
+    .project-card p{font-size:0.9rem;color:#ccc;min-height:60px;}
+    .project-card .links a{color:#00d4ff;margin:0 8px;font-size:1.25rem;transition:color 0.3s,transform 0.3s;}
+    .project-card .links a:hover{color:#a084ee;transform:scale(1.15);}
+    .projects-swiper .swiper-button-next,
+    .projects-swiper .swiper-button-prev{color:#fff;}
+
+    /* ---- About Section Styles ---- */
+    .about-section{
+      position:relative;
+      padding:4rem 0;
+      display:flex;
+      justify-content:center;
+    }
+    .about-inner{
+      max-width:800px;
+      margin:0 auto;
+      background:rgba(26,26,26,0.7);
+      border:1px solid #333;
+      border-radius:16px;
+      padding:40px 32px;
+      box-shadow:0 12px 45px rgba(0,0,0,0.5),0 0 0 1px rgba(255,255,255,0.05);
+      backdrop-filter:blur(12px);
+      text-align:center;
+    }
+    .about-heading{font-size:2rem;margin-bottom:10px;color:#fff;}
+    .gradient-text{background:linear-gradient(90deg,#00d4ff 0%,#a084ee 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+    .about-sub{font-weight:600;margin-bottom:20px;}
+    .typed-gradient{background:linear-gradient(90deg,#a084ee 0%,#00d4ff 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+    .about-description{color:#ccc;font-size:1rem;margin-bottom:24px;line-height:1.6;}
+    .about-highlights{list-style:none;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:16px;}
+    .about-highlights li{color:#fff;font-size:0.95rem;background:#111;border:1px solid #333;border-radius:30px;padding:8px 20px;display:flex;align-items:center;gap:8px;transition:transform 0.3s;}
+    .about-highlights li:hover{transform:translateY(-4px);background:#1f1f1f;}
+    .about-highlights i{color:#00d4ff;}
+
+/* ---- ABOUT MODERN REWORK ---- */
+.about-modern{position:relative;padding:6rem 0 4rem;display:flex;justify-content:center;}
+.about-modern .container-flex{display:flex;flex-wrap:wrap;align-items:center;gap:40px;max-width:1200px;margin:0 auto;}
+.about-modern .text-zone{flex:1 1 400px;min-width:300px;}
+.about-modern .tilt-card{flex:1 1 320px;max-width:400px;background:rgba(26,26,26,0.6);border:1px solid #333;border-radius:20px;box-shadow:0 15px 50px rgba(0,0,0,0.45);backdrop-filter:blur(10px);padding:20px;display:flex;justify-content:center;align-items:center;}
+.about-modern .tilt-card lottie-player{width:100%;height:100%;}
+.about-modern h2{font-size:2.8rem;color:#fff;margin-bottom:8px;}
+.about-modern h2 span{background:linear-gradient(90deg,#a084ee 0%,#00d4ff 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.about-modern h3{font-weight:600;font-size:1.3rem;margin-bottom:18px;}
+.about-modern p{color:#ccc;font-size:1rem;line-height:1.65;margin-bottom:22px;max-width:600px;}
+.about-modern .stats{display:flex;gap:24px;margin-bottom:24px;flex-wrap:wrap;}
+.about-modern .stat{background:#111;border:1px solid #333;border-radius:14px;padding:16px 24px;text-align:center;transition:transform .35s}
+.about-modern .stat:hover{transform:translateY(-6px) scale(1.04);}
+.about-modern .stat h4{font-size:1.8rem;color:#00d4ff;margin:0;}
+.about-modern .stat p{margin:0;color:#aaa;font-size:.85rem;letter-spacing:.5px;}
+
+/* skills carousel */
+.skill-card{background:#111;border:1px solid #333;border-radius:12px;padding:20px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px;transition:transform .3s}
+.skill-card img{width:46px;height:46px;filter:drop-shadow(0 0 6px rgba(0,212,255,.4));}
+.skill-card p{margin:0;color:#ccc;font-size:.9rem}
+.skill-card:hover{transform:translateY(-6px) scale(1.05);}
+.about-card{background:#111;border:1px solid #333;border-radius:16px;padding:40px;box-shadow:0 15px 35px rgba(0,0,0,0.45);display:flex;flex-direction:column;gap:24px;}
+.about-card h3{margin-top:0;color:#fff;}
+.about-card p{color:#ccc;line-height:1.6;}
+.about-card .stats{display:flex;gap:20px;flex-wrap:wrap;}
+.about-card .stat{flex:1 1 100px;background:#1a1a1a;border:1px solid #444;border-radius:12px;padding:16px;text-align:center;}
+.about-card .stat h4{color:#00d4ff;margin:0;font-size:1.6rem;}
+.about-card .stat p{margin:0;color:#aaa;font-size:.85rem;}
+
+/* stat box fancy hover */
+.about-card .stat{position:relative;overflow:hidden;color:#fff;cursor:default;}
+
+.about-card .stat:hover{transform:translateY(-6px) scale(1.05) rotateX(5deg);box-shadow:0 10px 28px rgba(0,212,255,0.45);} 
+.about-card .stat h4,.about-card .stat p{position:relative;z-index:1;}
+
+/* animated glow word */
+.glow{background:linear-gradient(90deg,#00d4ff 0%,#a084ee 50%,#00d4ff 100%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:gradientShift 4s linear infinite;}
+@keyframes gradientShift{0%{background-position:0%}100%{background-position:200%}}
+
+/* button aggressive hover */
+.actions .button{position:relative;overflow:hidden;transition:transform .3s ease,box-shadow .3s ease;z-index:1;display:inline-flex;align-items:center;justify-content:center;}
+.actions .button::before{content:'';position:absolute;inset:0;background:linear-gradient(120deg,#00d4ff 0%,#a084ee 100%);transform:translateX(-100%);transition:transform .5s cubic-bezier(.4,.14,.3,1);z-index:-1;}
+.actions .button:hover{transform:translateY(-4px) scale(1.05);box-shadow:0 0 20px rgba(0,212,255,.45);} 
+.actions{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:10px;}
+.actions .button{position:relative;overflow:hidden;padding:0.8em 2.2em;}
+.actions .button::before{content:'';position:absolute;top:0;left:-75%;width:50%;height:100%;background:rgba(255,255,255,0.15);transform:skewX(-25deg);transition:left .7s cubic-bezier(.23,1,.32,1);} 
+.actions .button:hover::before{left:130%;}
+.actions .button:hover{transform:translateY(-4px) scale(1.07);box-shadow:0 0 25px rgba(0,212,255,.5);} 
+
+
+/* ---- Unified Card Style ---- */
+.project-card h3,.project-card p,.certificate-card p,.certificate-card h3{
+  background:linear-gradient(270deg,#00d4ff 0%,#00ffd2 25%,#a084ee 50%,#ff4fff 75%,#00d4ff 100%);
+  background-size:200% auto;
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:gradientShift 6s linear infinite;
+}
+
+.project-card, .about-card .stat{
+  background:linear-gradient(135deg,#1a1a1a 0%,#111 100%);
+  border:1px solid rgba(0,212,255,.18);
+  transition:transform .4s cubic-bezier(.25,.8,.25,1), box-shadow .4s;
+}
+.project-card:hover, .about-card .stat:hover{
+  transform:translateY(-6px) scale(1.05) rotateX(5deg);
+  box-shadow:0 10px 28px rgba(0,212,255,0.45);
+}
+
+/* ---- Section Title Animation ---- */
+.section-title{
+  display:inline-block;
+  font-size:2.6rem;
+  font-weight:700;
+  line-height:1.2;
+  background:linear-gradient(90deg,#00d4ff 0%,#a084ee 50%,#00d4ff 100%);
+  background-size:200% auto;
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  transition:transform .3s ease,text-shadow .3s ease;
+}
+.section-title:hover{
+  transform:translateY(-4px) scale(1.05);
+  text-shadow:0 0 12px rgba(0,212,255,.6);
+}
+
+
+
+@media(max-width:700px){
+  .actions{flex-direction:column;align-items:center;}
+
+  .about-card{padding:24px;}
+}
+.skills-swiper .swiper-slide{width:120px;}
+
+/* ---- Headline Neon Gradient ---- */
+.headline{font-size:3rem;font-weight:700;line-height:1.1;margin-bottom:12px;color:#fff;text-align:center;}
+.headline .light{font-weight:400;color:#aaa;}
+.gradient-name{background:linear-gradient(270deg,#00d4ff,#a084ee,#00d4ff);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:gradientShift 6s linear infinite;}
+@keyframes gradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.subline{font-weight:600;color:#a084ee;margin-bottom:20px;font-size:1.3rem;text-align:center;}
+.char{opacity:0;}
+
+/* ripple button */
+.button.ripple{position:relative;overflow:hidden;}
+.button.ripple::after{content:'';position:absolute;left:50%;top:50%;width:20px;height:20px;background:rgba(0,212,255,.4);border-radius:50%;transform:translate(-50%,-50%) scale(0);opacity:0;transition:transform .6s,opacity .6s;}
+.button.ripple:hover::after{transform:translate(-50%,-50%) scale(8);opacity:1;}
+
+
+/* responsive */
+@media(max-width:768px){
+  .about-modern .container-flex{flex-direction:column;align-items:center;}
+  .about-modern .tilt-card{order:-1;width:80%;max-width:300px;margin-bottom:24px;}
+  .about-modern h2{font-size:2.2rem;}
+  .about-modern h3{font-size:1.1rem;}
+}
+
+    .parallax-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('images/parallax-bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      z-index: -1;
+      filter: blur(3px);
+      transform: translateZ(0);
+      will-change: transform;
+    }
+    .about-section {
+      position: relative;
+      z-index: 1;
+      padding: 4rem 0;
+      display: flex;
+      justify-content: center;
+    }
+    .about-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      background: rgba(26, 26, 26, 0.8);
+      border: 1px solid #333;
+      border-radius: 16px;
+      padding: 40px 32px;
+      box-shadow: 0 12px 45px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      text-align: center;
+      transition: transform 0.5s ease-in-out;
+    }
+    .about-inner:hover {
+      transform: scale(1.05);
+    }
+    .about-heading {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #fff;
+      animation: text-flicker-in-glow 3s ease-in-out infinite alternate;
+    }
+    .gradient-text {
+      background: linear-gradient(90deg, #00d4ff 0%, #a084ee 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .about-sub {
+      font-weight: 600;
+      margin-bottom: 20px;
+      animation: fadeIn 2s;
+    }
+    .typed-gradient {
+      background: linear-gradient(90deg, #a084ee 0%, #00d4ff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .about-description {
+      color: #ccc;
+      font-size: 1rem;
+      margin-bottom: 24px;
+      line-height: 1.6;
+      animation: fadeInUp 2s;
+    }
+    .about-highlights {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+    }
+    .about-highlights li {
+      color: #fff;
+      font-size: 0.95rem;
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 30px;
+      padding: 8px 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.3s;
+    }
+    .about-highlights li:hover {
+      transform: translateY(-4px);
+      background: #1f1f1f;
+    }
+    .about-highlights i {
+      color: #00d4ff;
+    }
+    @keyframes text-flicker-in-glow {
+      0% {
+        opacity: 0;
+      }
+      10% {
+        opacity: 0;
+      }
+      10.1% {
+        opacity: 1;
+      }
+      10.2% {
+        opacity: 0;
+      }
+      20% {
+        opacity: 0;
+      }
+      20.1% {
+        opacity: 1;
+      }
+      20.6% {
+        opacity: 0;
+      }
+      30% {
+        opacity: 0;
+      }
+      30.1% {
+        opacity: 1;
+      }
+      30.5% {
+        opacity: 0;
+      }
+      45% {
+        opacity: 0;
+      }
+      45.1% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+      55% {
+        opacity: 0;
+      }
+      55.1% {
+        opacity: 1;
+      }
+      57% {
+        opacity: 0;
+      }
+      60% {
+        opacity: 0;
+      }
+      60.1% {
+        opacity: 1;
+      }
+      65% {
+        opacity: 0;
+      }
+      65.1% {
+        opacity: 1;
+      }
+      75% {
+        opacity: 0;
+      }
+      75.1% {
+        opacity: 1;
+      }
+      77% {
+        opacity: 0;
+      }
+      85% {
+        opacity: 0;
+      }
+      85.1% {
+        opacity: 1;
+      }
+      86% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
   </style>
 
   <!-- Scripts -->
@@ -993,6 +1386,91 @@
           },
         });
       }
+    });
+  </script>
+  <!-- External libs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <!-- External lib for typed text -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+  <!-- Init Projects Swiper -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      new Swiper('.projects-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: { delay: 5000, disableOnInteraction: false },
+        pagination: { el: '.projects-swiper .swiper-pagination', clickable: true },
+        navigation: { nextEl: '.projects-swiper .swiper-button-next', prevEl: '.projects-swiper .swiper-button-prev' },
+        grabCursor: true,
+        breakpoints: {
+          640: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 }
+        }
+      });
+    });
+  </script>
+
+  <!-- Init Typed.js for About section -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      new Typed('#typed-role', {
+        strings: ['AI Engineer', 'Full-Stack Developer', 'ML Enthusiast', 'Open-Source Contributor'],
+        typeSpeed: 60,
+        backSpeed: 35,
+        backDelay: 1500,
+        loop: true
+      });
+    });
+  </script>
+
+  <!-- Anime.js text entrance -->
+  <script>
+    document.addEventListener('DOMContentLoaded',()=>{
+      Splitting();
+      anime.timeline()
+        .add({
+          targets:'.headline .char',
+          translateY:[60,0],
+          opacity:[0,1],
+          easing:'easeOutExpo',
+          duration:900,
+          delay:anime.stagger(25)
+        })
+        .add({
+          targets:'.subline .char',
+          translateY:[60,0],
+          opacity:[0,1],
+          easing:'easeOutExpo',
+          duration:800,
+          delay:anime.stagger(20),
+          offset:'-=600'
+        });
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    // GSAP reveal for section titles
+    gsap.utils.toArray('.section-title').forEach(el=>{
+      gsap.from(el, {
+        y:60,
+        opacity:0,
+        duration:1,
+        ease:'back.out(1.7)',
+        scrollTrigger:{
+          trigger:el,
+          start:'top 85%'
+        }
+      });
     });
   </script>
 </body>
