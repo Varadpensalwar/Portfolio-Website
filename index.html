@@ -50,7 +50,7 @@
     <section id="intro" class="wrapper style1 fullscreen fade-up">
       <div id="particles-js">
         <div class="btext">
-          <h1>Hi ! I am Varad</h1>
+          <h1>Varad Pensalwar</h1>
 
           <p>A senior AIML undergrad at SGU Kolhapur.</p>
 
@@ -115,7 +115,7 @@
       <!-- === Modern Projects Carousel === -->
       <section id="three" class="wrapper style2 fade-up">
         <div class="inner">
-          <h2 class="major section-title">Featured Projects</h2>
+          <h2 class="major section-title">Projects</h2>
 
           <div class="swiper projects-swiper">
             <div class="swiper-wrapper">
@@ -286,13 +286,18 @@
           <!-- Location -->
           <div class="contact-card address hover-gradient">
             <i class="fas fa-map-marker-alt fa-2x"></i>
-            <h3>Location</h3>
-            <p>Shinde Vasti, Hinjawadi<br>Pune, Maharashtra 411057<br>India</p>
+            <h3>
+              <a href="https://www.google.com/maps/place/RAMBO+PG+(Luxurious+Living)/@18.6058222,73.722995,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc2bb465fc09cbf:0x90f26f60c1e71306!8m2!3d18.6058171!4d73.7255699!16s%2Fg%2F11mcxjrnb7?entry=ttu&g_ep=EgoyMDI1MDYzMC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                Location
+              </a>
+            </h3>            
+            <p>Shinde Vasti, Hinjawadi<br>Pune, Maharashtra - 411057<br>India</p>
           </div>
            <!-- Social & Email -->
            <div class="contact-card social hover-gradient">
+              <i class="fas fa-paper-plane fa-2x"></i>
              <h3>Connect</h3>
-             <p>Its pretty easy to contact <br> me !</p>
+             <p>Its pretty easy to contact me</p>
              <div class="social-icons">
                <a href="mailto:varadpensalwar@gmail.com" class="fas fa-envelope"></a>
                <a href="https://x.com/PensalwarVarad" class="fab fa-twitter"></a>
@@ -1050,8 +1055,8 @@
 
 /* ==== Contact Styles ==== */
 .contact-grid{display:flex;flex-wrap:wrap;gap:24px;justify-content:center;margin-top:2rem;}
-.contact-card{flex:1 1 220px;max-width:300px;background:#111;border:2px solid rgba(0,212,255,0.35);border-radius:16px;padding:24px;text-align:center;box-shadow:0 0 6px rgba(0,212,255,0.25),0 0 12px rgba(160,132,238,0.25);transition:transform .35s,box-shadow .35s,border-color .35s;}
-.contact-card:hover{transform:translateY(-8px) scale(1.05);box-shadow:0 0 12px rgba(0,212,255,0.45),0 0 24px rgba(160,132,238,0.45);border-color:rgba(0,212,255,0.6);} 
+.contact-card{flex:1 1 220px;max-width:300px;background:#111;border:2px solid rgba(0,212,255,0.35);border-radius:16px;padding:24px;text-align:center;box-shadow:0 0 6px rgba(255,160,90,0.25),0 0 12px rgba(255,105,105,0.25);transition:transform .35s,box-shadow .35s,border-color .35s;}
+.contact-card:hover{transform:translateY(-8px) scale(1.05);box-shadow:0 0 12px rgba(255,160,90,0.45),0 0 24px rgba(255,105,105,0.45);border-color:rgba(0,212,255,0.6);} 
 .contact-card i{color:#00d4ff;margin-bottom:12px;}
 .contact-card h3{margin:0 0 8px;font-size:1.2rem;background:linear-gradient(90deg,#00d4ff 0%,#a084ee 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
 .contact-card p{
@@ -1068,7 +1073,11 @@
 .contact-card a:hover{color:#a084ee;}
 .social-icons{display:flex;justify-content:center;gap:16px;margin-top:6px;}
 .social-icons a{font-size:1.4rem;color:#00d4ff;transition:color .3s,transform .3s;}
-.social-icons a:hover{color:#a084ee;transform:scale(1.15);}
+.social-icons a:hover{color:#a084ee;transform:scale(1.15);} 
+
+/* orange contact-card override */
+.contact-card{border-color:rgba(255,160,90,0.45)!important;}
+.contact-card:hover{border-color:rgba(255,160,90,0.75)!important;}
 
 @media(max-width:700px){.contact-grid{flex-direction:column;align-items:center;gap:20px;}}
 
@@ -1499,6 +1508,51 @@
           delay:anime.stagger(20),
           offset:'-=600'
         });
+    });
+  </script>
+  <!-- Count-up animation for About stats -->
+  <script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+      const statEls = document.querySelectorAll('#about .stats .stat h4');
+      if(!statEls.length) return;
+      // Pre-process each element: record target and reset to 0
+      statEls.forEach(el=>{
+        const txt = el.textContent.trim();
+        const hasPlus = txt.endsWith('+');
+        const target = parseInt(txt.replace(/[^0-9]/g,'') || '0', 10);
+        el.dataset.target = target;
+        el.dataset.plus = hasPlus ? '+' : '';
+        el.textContent = '0' + (hasPlus ? '+' : '');
+      });
+
+      let animated = false;
+      const animateCounts = () => {
+        if(animated) return; animated = true;
+        statEls.forEach(el=>{
+          anime({
+            targets: el,
+            innerHTML: [0, Number(el.dataset.target)],
+            duration: 1800,
+            easing: 'easeOutExpo',
+            round: 1,
+            update: function(anim){
+              el.innerHTML = Math.round(anim.animations[0].currentValue) + el.dataset.plus;
+            }
+          });
+        });
+      };
+
+      // Trigger when About section enters viewport (works for Get Started scroll as well)
+      const observer = new IntersectionObserver(entries=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting){
+            animateCounts();
+            observer.disconnect();
+          }
+        });
+      },{threshold:0.5});
+      const aboutSection = document.querySelector('#about');
+      if(aboutSection) observer.observe(aboutSection);
     });
   </script>
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
