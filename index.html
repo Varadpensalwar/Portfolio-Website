@@ -90,7 +90,7 @@
           <h2 class="major section-title">About Me</h2>
           <div class="about-card">
           <div class="text-zone">
-            <h2 class="headline" data-splitting><span class="light">Hello,&nbsp;I'm</span> <span class="gradient-name">Varad</span></h2>
+            <h2 class="headline" data-splitting><span class="light">Hello,&nbsp;I'm </span> <span class="gradient-name">Varad</span></h2>
             <h3 class="subline" data-splitting><span id="typed-role"></span></h3>
             <p class="about-intro">
               Crafting <span class="glow">intelligent products</span> where <span class="glow">machine-learning</span> collides with <span class="glow">pixel-perfect UI</span>. Turning abstract thoughts into <span class="glow">production-ready</span> magic—fast.
@@ -281,46 +281,26 @@
     <!-- Four -->
     <section id="four" class="wrapper style1 fade-up">
       <div class="inner">
-        <h2>Get in touch !</h2>
-        <p>
-          <strong>Its pretty easy to contact me !</strong> I am highly active
-          in all the following threads and please feel free to drop by any of
-          them.
-        </p>
-
-        <section>
-          <ul class="contact">
-            <li>
-              <h3>Address</h3>
-              <span style="
-                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                  ">Shinde Vasti,Hinjawadi<br />
-                Pune, Maharashtra-411057<br />
-                India</span>
-            </li>
-            <li>
-              <h3>Social</h3>
-              <ul class="icons">
-                <li>
-                  <a href="https://x.com/PensalwarVarad" class="icon brands fa-twitter fa-2x"
-                    style="color: skyblue"><span class="label">Twitter</span></a>
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/in/varad-pensalwar/" class="icon brands fa-linkedin-in fa-2x"
-                    style="color: dodgerblue"><span class="label">LinkedIn</span></a>
-                </li>
-                <li>
-                  <a href="https://github.com/Varadpensalwar" class="icon brands fa-github fa-2x"
-                    style="color: white"><span class="label">Github</span></a>
-                </li>
-                <li>
-                  <a href="mailto:varadpensalwar@gmail.com" class="fa fa-envelope fa-2x"
-                    style="color: white; text-decoration: none"><span class="label">Mail Me</span></a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </section>
+        <h2 class="major section-title">Let’s Connect</h2>
+        <div class="contact-grid">
+          <!-- Location -->
+          <div class="contact-card address hover-gradient">
+            <i class="fas fa-map-marker-alt fa-2x"></i>
+            <h3>Location</h3>
+            <p>Shinde Vasti, Hinjawadi<br>Pune, Maharashtra 411057<br>India</p>
+          </div>
+           <!-- Social & Email -->
+           <div class="contact-card social hover-gradient">
+             <h3>Connect</h3>
+             <p>Its pretty easy to contact <br> me !</p>
+             <div class="social-icons">
+               <a href="mailto:varadpensalwar@gmail.com" class="fas fa-envelope"></a>
+               <a href="https://x.com/PensalwarVarad" class="fab fa-twitter"></a>
+               <a href="https://www.linkedin.com/in/varad-pensalwar/" class="fab fa-linkedin-in"></a>
+               <a href="https://github.com/Varadpensalwar" class="fab fa-github"></a>
+             </div>
+           </div>
+        </div>
       </div>
     </section>
   </div>
@@ -1044,7 +1024,7 @@
 
 
 @media(max-width:700px){
-  .actions{flex-direction:column;align-items:center;gap:10px;margin-bottom:0;}
+  .actions{flex-direction:column;align-items:center;gap:8px;margin-bottom:0;}
   .actions .button{width:100%;max-width:280px;text-align:center;}
   .about-card{padding:24px;}
 }
@@ -1065,8 +1045,32 @@
 .button.ripple:hover::after{transform:translate(-50%,-50%) scale(8);opacity:1;}
 
 /* ==== Section Background Override ==== */
-.wrapper.style2,.wrapper.style3{background:#1a1a1a!important;}
+.wrapper.style1,.wrapper.style2,.wrapper.style3{background:#1a1a1a!important;}
 #two{background:#1a1a1a!important;}
+
+/* ==== Contact Styles ==== */
+.contact-grid{display:flex;flex-wrap:wrap;gap:24px;justify-content:center;margin-top:2rem;}
+.contact-card{flex:1 1 220px;max-width:300px;background:#111;border:2px solid rgba(0,212,255,0.35);border-radius:16px;padding:24px;text-align:center;box-shadow:0 0 6px rgba(0,212,255,0.25),0 0 12px rgba(160,132,238,0.25);transition:transform .35s,box-shadow .35s,border-color .35s;}
+.contact-card:hover{transform:translateY(-8px) scale(1.05);box-shadow:0 0 12px rgba(0,212,255,0.45),0 0 24px rgba(160,132,238,0.45);border-color:rgba(0,212,255,0.6);} 
+.contact-card i{color:#00d4ff;margin-bottom:12px;}
+.contact-card h3{margin:0 0 8px;font-size:1.2rem;background:linear-gradient(90deg,#00d4ff 0%,#a084ee 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.contact-card p{
+  font-size:0.9rem;line-height:1.5;
+  background:linear-gradient(270deg,#00d4ff 0%,#00ffd2 25%,#a084ee 50%,#ff4fff 75%,#00d4ff 100%);
+  background-size:200% auto;
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:gradientShift 6s linear infinite;
+}
+.contact-card a{color:#00d4ff;font-size:0.9rem;line-height:1.5;}
+.contact-card a{display:inline-block;margin-top:6px;text-decoration:none;color:#00d4ff;transition:color .3s;}
+.contact-card a:hover{color:#a084ee;}
+.social-icons{display:flex;justify-content:center;gap:16px;margin-top:6px;}
+.social-icons a{font-size:1.4rem;color:#00d4ff;transition:color .3s,transform .3s;}
+.social-icons a:hover{color:#a084ee;transform:scale(1.15);}
+
+@media(max-width:700px){.contact-grid{flex-direction:column;align-items:center;gap:20px;}}
 
 /* ==== Premium Lit-Edge Boxes & Certificates ==== */
 .about-card{
