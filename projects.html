@@ -122,13 +122,7 @@
 			border-top: 1px solid #444 !important;
 		}
 
-		/* Enhanced title styling */
-		.major {
-			color: #ffffff !important;
-			text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-			font-weight: 700;
-			letter-spacing: 2px;
-		}
+		
 
 		/* Card deck spacing and floating animation */
 		.card-deck {
@@ -155,7 +149,85 @@
 			50% { transform: translateY(-10px); }
 		}
 
-		/* Glowing effect for links */
+		/* ==== Enhanced Headings, Titles & Descriptions ==== */
+/* ==== Reduced Color Palette Overrides ==== */
+.major{
+  background:linear-gradient(90deg,#00d4ff 0%, #a084ee 100%);
+  background-size:200% auto;
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  animation:gradientShift 6s linear infinite;
+}
+.card-title{
+  background:linear-gradient(90deg,#ff8a00 0%, #ff4fff 100%);
+  background-size:200% auto;
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  animation:gradientShift 8s linear infinite;
+  font-weight:600;
+}
+.card-text, .card-body p{
+  background:linear-gradient(90deg,#00ffc4 0%, #ffe985 100%);
+  background-size:200% auto;
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  animation:gradientShift 10s linear infinite;
+}
+
+		@keyframes gradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+		.major{
+  background:linear-gradient(270deg,#00d4ff,#00ffa1,#ff4fff,#ffd500,#00d4ff);
+  background-size:600% auto;
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  animation:gradientShift 7s linear infinite;
+  text-shadow:none !important;
+}
+
+		.card-title{
+  background:linear-gradient(270deg,#ff8a00,#e52e71,#00ff1e,#00d4ff,#ff0000);
+  background-size:600% auto;
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  animation:gradientShift 9s linear infinite;
+  font-weight:600;
+}
+
+.card-text{
+		  background:linear-gradient(270deg,#ffdd55,#644fff,#00ffc4,#a084ee,#ff5555);
+		  background-size:600% auto;
+		  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+		  animation:gradientShift 10s linear infinite;
+		}
+
+		/* ==== Floating Home Button ==== */
+#floating-home-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+.home-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: rgba(17, 17, 17, 0.55);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: transform .35s, box-shadow .35s, border-color .35s, color .35s;
+    width: fit-content;
+}
+
+.home-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 212, 255, .35);
+    border-color: #00d4ff;
+    color: #00d4ff;
+}
+/* Glowing effect for links */
 		.fab, .fas {
 			transition: all 0.3s ease;
 		}

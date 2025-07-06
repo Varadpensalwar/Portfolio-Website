@@ -29,6 +29,7 @@
 </head>
 
 <body class="is-preload">
+  <div id="space-bg"></div>
   <!-- Sidebar -->
   <section id="sidebar">
     <div class="inner">
@@ -1085,7 +1086,29 @@ function openTelegram(event) {
 .social-icons a{font-size:1.4rem;color:#00d4ff;transition:color .3s,transform .3s;}
 .social-icons a:hover{color:#a084ee;transform:scale(1.15);} 
 
+/* === Space Background Layer === */
+#space-bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-3;pointer-events:none;}
+.wrapper.style1,.wrapper.style2,.wrapper.style3,#two{background:transparent!important;}
+
 /* orange contact-card override */
+
+/* ==== Floating Boxes Animation ==== */
+
+/* ==== Certificate Border Fix ==== */
+.certificate-card img, .mobile-cert-card img{
+  border:2px solid rgba(79,140,255,0.45)!important;
+  border-radius:12px!important;
+  box-shadow:0 0 8px rgba(79,140,255,0.4),0 0 14px rgba(160,132,238,0.35)!important;
+}
+.certificate-card img:hover, .mobile-cert-card img:hover{
+  border-color:rgba(79,140,255,0.75)!important;
+  box-shadow:0 0 12px rgba(79,140,255,0.6),0 0 24px rgba(160,132,238,0.55)!important;
+}
+
+@keyframes floatBox{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);} }
+.about-card,.project-card,.certificate-card,.mobile-cert-card,.contact-card{animation:floatBox 6s ease-in-out infinite;}
+.about-card:nth-child(even),.project-card:nth-child(even),.certificate-card:nth-child(even),.mobile-cert-card:nth-child(even),.contact-card:nth-child(even){animation-delay:2s;}
+
 .contact-card{border-color:rgba(255,160,90,0.45)!important;}
 .contact-card:hover{border-color:rgba(255,160,90,0.75)!important;}
 
@@ -1583,6 +1606,25 @@ function openTelegram(event) {
       });
     });
   </script>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    tsParticles.load('space-bg', {
+      fullScreen: { enable: false },
+      background: { color: '#00000000' },
+      particles: {
+        number: { value: 160, density: { enable: true, area: 800 } },
+        size: { value: { min: 1, max: 3 } },
+        shape: { type: ['circle', 'star'] },
+        color: { value: '#ffffff' },
+        opacity: { value: { min: 0.2, max: 0.8 } },
+        move: { enable: true, speed: 0.3, random: true, direction: 'none', outModes: { default: 'bounce' } },
+        collisions: { enable: true }
+      },
+      detectRetina: true
+    });
+  });
+</script>
 </body>
 
 </html>
