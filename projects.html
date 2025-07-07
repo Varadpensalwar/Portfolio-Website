@@ -165,10 +165,12 @@
   font-weight:600;
 }
 .card-text, .card-body p{
-  background:linear-gradient(90deg,#00ffc4 0%, #ffe985 100%);
+    background:linear-gradient(270deg,#00d4ff 0%,#00ffd2 25%,#a084ee 50%,#ff4fff 75%,#00d4ff 100%);
   background-size:200% auto;
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
-  animation:gradientShift 10s linear infinite;
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:gradientShift 6s linear infinite;
 }
 
 		@keyframes gradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
@@ -278,6 +280,28 @@
         .card-body p {
             color: #bbbbbb !important;
         }
+            /* === Border & Hover effects identical to index.html === */
+        .card.text-white.bg-dark {
+            background: #1a1a1a !important;
+            border: 1px solid #333 !important;
+            border-radius: 12px !important;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.45) !important;
+            transition: transform 0.35s ease, box-shadow 0.35s ease !important;
+        }
+        .card.text-white.bg-dark:hover {
+            transform: translateY(-12px) scale(1.03) !important;
+            box-shadow: 0 16px 48px rgba(79,140,255,0.28) !important;
+        }
+        .card.text-white.bg-dark .card-img-top {
+            border: 2px solid rgba(79,140,255,0.3) !important;
+            border-radius: 16px !important;
+            box-shadow: 0 0 6px rgba(79,140,255,0.25), 0 0 12px rgba(160,132,238,0.25) !important;
+            transition: box-shadow 0.35s ease, border-color 0.35s ease !important;
+        }
+        .card.text-white.bg-dark .card-img-top:hover {
+            box-shadow: 0 0 12px rgba(79,140,255,0.45), 0 0 24px rgba(160,132,238,0.45) !important;
+            border-color: rgba(79,140,255,0.6) !important;
+        }
     </style>
 </head>
 
@@ -306,34 +330,26 @@
 		<div class="card-deck p-3">
 			<div class="card text-white bg-dark">
 				<div class="card-header">Featured 🚀</div>
-				<!-- Swiper image slider for project images -->
-				<div class="swiper project-swiper">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide"><img class="card-img-top" src="images/PrepWise.png" alt="PrepWise screenshot 1" /></div>
-						<div class="swiper-slide"><img class="card-img-top" src="images/project.png" alt="PrepWise screenshot 2" /></div>
-						<div class="swiper-slide"><img class="card-img-top" src="images/Balaji Dresses Biloli.png" alt="PrepWise screenshot 2" /></div>
-						<div class="swiper-slide"><img class="card-img-top" src="images/blog_SS.png" alt="PrepWise screenshot 2" /></div>
-						<div class="swiper-slide"><img class="card-img-top" src="images/Pets Vibe.png" alt="PrepWise screenshot 2" /></div>
-						<div class="swiper-slide"><img class="card-img-top" src="images/SpotifyButBetter.png" alt="PrepWise screenshot 2" /></div>
-					</div>
-				</div>
+				<img class="card-img-top" src="images/SpotifyButBetter.png" alt="Card image cap" />
 				<div class="card-body">
-					<h4 class="card-title">PrepWise</h4>
+					<h4 class="card-title">Spotify but better</h4>
 					<p class="card-text">
-						Prepwise is a smart mock interview platform that uses advanced AI
-						technology to simulate real-life interview scenarios, helping
-						users practice both technical and behavioral questions.
+						Experience an innovative music streaming platform that not only
+						offers a vast library of tracks but also lets you see in real time
+						who's tuned in to each song, making it easy to discover who shares
+						your taste in music.
 					</p>
 					<p class="card-text">
-						With instant feedback and a clean, intuitive interface, it creates
-						a focused environment to boost your confidence and sharpen your
-						interview skills.
+						With its built-in messaging feature, you can effortlessly connect
+						and engage in dynamic conversations with fellow music enthusiasts,
+						turning every listening session into a lively, interactive social
+						experience.
 					</p>
 				</div>
 				<div class="card-footer text-muted">
-					<a href="https://github.com/Varadpensalwar/PrepWise.git" class="fab fa-github fa-lg"
+					<a href="https://github.com/Varadpensalwar/realtime-spotify-clone.git" class="fab fa-github fa-lg"
 						target="_blank" aria-hidden="true"></a>
-					<a href="https://prepwise-chi-wine.vercel.app/" class="fas fa-external-link-alt"
+					<a href="https://realtime-spotify-clone-6az4.onrender.com/" class="fas fa-external-link-alt"
 						style="margin-left: 10px" target="_blank" aria-hidden="true"></a>
 				</div>
 			</div>
