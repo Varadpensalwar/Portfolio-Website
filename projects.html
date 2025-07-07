@@ -195,7 +195,8 @@
 		  animation:gradientShift 10s linear infinite;
 		}
 
-		/* ==== Floating Home Button ==== */
+		
+/* ==== Floating Home Button ==== */
 #floating-home-btn {
     position: fixed;
     top: 20px;
@@ -204,29 +205,27 @@
 }
 
 .home-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 6px 12px;
-    background: rgba(17, 17, 17, 0.55);
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 12px;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+    border: 0;
+    color: rgba(255, 255, 255, 0.35);
+    display: inline-block;
+    font-size: 0.6em;
+    font-weight: bold;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
     text-decoration: none;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    transition: transform .35s, box-shadow .35s, border-color .35s, color .35s;
-    width: fit-content;
+    transition: transform .35s, box-shadow .35s, color .35s;
 }
 
 .home-btn:hover {
     transform: translateY(-4px);
-    box-shadow: 0 4px 12px rgba(0, 212, 255, .35);
-    border-color: #00d4ff;
-    color: #00d4ff;
+    box-shadow: 0 4px 12px rgba(0, 212, 255, 0.35);
+    color: rgba(255, 255, 255, 0.55);
 }
+
+.home-btn.active {
+    color: #ffffff;
+}
+
 /* Glowing effect for links */
 		.fab, .fas {
 			transition: all 0.3s ease;
@@ -289,16 +288,14 @@
 	<header id="header">
 		<nav>
 			<ul>
-				<!-- Removed Home button from header navigation -->
+				
 			</ul>
 		</nav>
 	</header>
+	<!-- Floating Home Button -->
+	<div id="floating-home-btn"><a href="index.html" class="home-btn">Home</a></div>
 
-	<!-- Always Visible Home Button -->
-	<div id="floating-home-btn">
-		<a href="index.html" class="home-btn">Home</a>
-	</div>
-
+	
 	<!-- Wrapper -->
 	<div class="container">
 		<h1 class="major p-4 text-center text-white" style="font-size: 35pt">
