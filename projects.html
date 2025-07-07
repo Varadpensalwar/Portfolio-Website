@@ -330,7 +330,7 @@
 		<div class="card-deck p-3">
 			<div class="card text-white bg-dark">
 				<div class="card-header">Featured 🚀</div>
-				<img class="card-img-top" src="images/SpotifyButBetter.png" alt="Card image cap" />
+				<img class="card-img-top" src="images/SpotifyButBetter.png" alt="Card image cap" data-images="images/SpotifyButBetter2.png, images/SpotifyButBetter3.png" />
 				<div class="card-body">
 					<h4 class="card-title">Spotify but better</h4>
 					<p class="card-text">
@@ -356,7 +356,7 @@
 
 			<div class="card text-white bg-dark">
 				<div class="card-header">Featured 🚀</div>
-				<img class="card-img-top" src="images/SpotifyButBetter.png" alt="Card image cap" />
+				<img class="card-img-top" src="images/SpotifyButBetter.png" alt="Card image cap" data-images="images/Balaji Dresses Biloli.png, images/Balaji Dresses Biloli.png" />
 				<div class="card-body">
 					<h4 class="card-title">Spotify but better</h4>
 					<p class="card-text">
@@ -384,7 +384,7 @@
 		<div class="card-deck p-3">
 			<div class="card text-white bg-dark">
 				<div class="card-header">Featured 🚀</div>
-				<img class="card-img-top" src="images/Chatty.png" alt="Card image cap" />
+				<img class="card-img-top" src="images/Chatty.png" alt="Card image cap" data-images="images/Chatty1.png, images/Chatty2.png" />
 				<div class="card-body">
 					<h4 class="card-title">Chatty - The Chatting Website</h4>
 					<p class="card-text">
@@ -408,7 +408,7 @@
 			</div>
 			<div class="card text-white bg-dark">
 				<div class="card-header">Featured 🚀</div>
-				<img class="card-img-top" src="images/Ziggy - The Voice Assistant.png" alt="Card image cap" />
+				<img class="card-img-top" src="images/Ziggy - The Voice Assistant.png" alt="Card image cap" data-images="images/Ziggy - The Voice Assistant 1.png, images/Ziggy - The Voice Assistant 2.png" />
 				<div class="card-body">
 					<h4 class="card-title">Ziggy - The Voice Assistant</h4>
 					<p class="card-text">
@@ -433,7 +433,7 @@
 		<div class="card-deck p-3">
 			<div class="card text-white bg-dark">
 				<div class="card-header">Featured 🚀</div>
-				<img class="card-img-top" src="images/Pets Vibe.png" alt="Card image cap" />
+				<img class="card-img-top" src="images/Pets Vibe.png" alt="Card image cap" data-images="images/Pets Vibe 1.png, images/Pets Vibe 2.png" />
 				<div class="card-body">
 					<h4 class="card-title">Pets Vibe</h4>
 					<p class="card-text">
@@ -456,7 +456,7 @@
 			</div>
 			<div class="card text-white bg-dark">
 				<div class="card-header">Featured 🚀</div>
-				<img class="card-img-top" src="images/blog_SS.png" alt="Card image cap" />
+				<img class="card-img-top" src="images/blog_SS.png" alt="Card image cap" data-images="images/blog_SS_1.png, images/blog_SS_2.png" />
 				<div class="card-body">
 					<h4 class="card-title">Varad's Blog App</h4>
 					<p class="card-text">
@@ -482,7 +482,7 @@
         <div class="card-deck p-3">
 			<div class="card text-white bg-dark">
 				<div class="card-header">Featured 🚀</div>
-				<img class="card-img-top" src="images/Balaji Dresses Biloli.png" alt="Card image cap" />
+				<img class="card-img-top" src="images/Balaji Dresses Biloli.png" alt="Card image cap" data-images="images/Balaji Dresses Biloli 1.png, images/Balaji Dresses Biloli 2.png" />
 				<div class="card-body">
 					<h4 class="card-title">Balaji Dresses, Biloli</h4>
 					<p class="card-text">
@@ -502,7 +502,7 @@
 			</div>
 			<div class="card text-white bg-dark">
 				<div class="card-header">Featured 🚀</div>
-				<img class="card-img-top" src="images/Porsche 911 GT3 RS.png" alt="Card image cap" />
+				<img class="card-img-top" src="images/Porsche 911 GT3 RS.png" alt="Card image cap" data-images="images/Porsche 911 GT3 RS 1.png, images/Porsche 911 GT3 RS 2.png" />
 				<div class="card-body">
 					<h4 class="card-title">Porsche 911 GT3 RS</h4>
 					<p class="card-text">
@@ -548,10 +548,41 @@
 		crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 	<script>
-		document.addEventListener('DOMContentLoaded', function() {
-			const swipers = document.querySelectorAll('.project-swiper');
-			swipers.forEach(function(swiperEl) {
-				new Swiper(swiperEl, {
+		document.addEventListener('DOMContentLoaded', function () {
+			// Convert any project image that lists extra images into an auto-scrolling Swiper carousel
+			document.querySelectorAll('img.card-img-top[data-images]').forEach(function (imgEl) {
+				const extraImages = imgEl.dataset.images.split(',').map(function (s) { return s.trim(); }).filter(Boolean);
+				if (extraImages.length === 0) return;
+
+				// Include the original image first, followed by any extra images
+				const slides = [imgEl.src].concat(extraImages);
+
+				// Build Swiper markup
+				const swiper = document.createElement('div');
+				swiper.className = 'swiper project-swiper';
+				const wrapper = document.createElement('div');
+				wrapper.className = 'swiper-wrapper';
+
+				slides.forEach(function (src) {
+					const slide = document.createElement('div');
+					slide.className = 'swiper-slide';
+
+					const img = document.createElement('img');
+					img.src = src;
+					img.alt = imgEl.alt || 'Project image';
+					img.className = 'card-img-top';
+
+					slide.appendChild(img);
+					wrapper.appendChild(slide);
+				});
+
+				swiper.appendChild(wrapper);
+
+				// Replace the original image with the newly-created Swiper
+				imgEl.parentNode.replaceChild(swiper, imgEl);
+
+				// Activate Swiper for this carousel
+				new Swiper(swiper, {
 					effect: 'fade',
 					loop: true,
 					autoplay: { delay: 2200, disableOnInteraction: false },
