@@ -237,7 +237,48 @@
 			text-shadow: 0 0 15px rgba(0, 212, 255, 0.8);
 			transform: scale(1.2);
 		}
-	</style>
+	
+        /* === Dark Theme Colour Tweaks === */
+        /* Main title: dark grey with hover accent */
+        .major {
+            background: linear-gradient(90deg, #000000 0%, #777777 100%) !important;
+            background-size: 200% auto !important;
+            -webkit-background-clip: text !important;
+            background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            color: transparent !important;
+            animation: none !important;
+            text-shadow: none !important;
+            transition: background-position 0.4s ease;
+        }
+        .major:hover {
+            background: linear-gradient(90deg, #98d0ef 0%,#ef9898 50%, #ffffff 100%) !important;
+            background-size: 200% auto !important;
+            background-position: 100% 0;
+            -webkit-background-clip: text !important;
+            background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            color: transparent !important;
+        }
+
+        /* Project headings: black–white gradient */
+        .card-title {
+            background: linear-gradient(90deg, #000000 0%, #ffffff 100%) !important;
+            background-size: 200% auto !important;
+            -webkit-background-clip: text !important;
+            background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            color: transparent !important;
+            animation: none !important;
+            text-shadow: none !important;
+        }
+
+        /* Project description: light grey text */
+        .card-text,
+        .card-body p {
+            color: #bbbbbb !important;
+        }
+    </style>
 </head>
 
 <body class="is-preload">
