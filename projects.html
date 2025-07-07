@@ -240,7 +240,7 @@
         /* === Dark Theme Colour Tweaks === */
         /* Main title: dark grey with hover accent */
         .major {
-            background: linear-gradient(90deg, #000000 0%, #777777 100%) !important;
+            background: linear-gradient(90deg, #000000 0%, #e86d6d 0%, #e8cb6d 25%, #6de89a 50%, #6da9e8 75%, #806de8 100%) !important;
             background-size: 200% auto !important;
             -webkit-background-clip: text !important;
             background-clip: text !important;
@@ -262,14 +262,15 @@
 
         /* Project headings: black–white gradient */
         .card-title {
-            background: linear-gradient(90deg, #000000 0%, #ffffff 100%) !important;
-            background-size: 200% auto !important;
-            -webkit-background-clip: text !important;
-            background-clip: text !important;
-            -webkit-text-fill-color: transparent !important;
-            color: transparent !important;
-            animation: none !important;
-            text-shadow: none !important;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #000000, #949494, #000000);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientMove 3s linear infinite;
         }
 
         /* Project description: light grey text */
