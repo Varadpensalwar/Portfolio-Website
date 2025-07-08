@@ -5,593 +5,817 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
+  <head>
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/manifest.json" />
 
-<head>
-	<!-- Web App Manifest -->
-	<link rel="manifest" href="/manifest.json" />
+    <!-- iOS support -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Your App Name" />
+    <link rel="apple-touch-icon" href="/images/icons/icon-152x152.png" />
 
-	<!-- iOS support -->
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-	<meta name="apple-mobile-web-app-title" content="Your App Name" />
-	<link rel="apple-touch-icon" href="/images/icons/icon-152x152.png" />
+    <!-- Theme color -->
+    <meta name="theme-color" content="#000000" />
+    <title>Projects</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
 
-	<!-- Theme color -->
-	<meta name="theme-color" content="#000000" />
-	<title>Projects</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<link rel="shortcut icon" type="image/png" href="images/favicon.png" />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <noscript>
+      <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+      a.fab {
+        color: white;
+        text-decoration: none;
+        border: none;
+      }
 
-	<noscript>
-		<link rel="stylesheet" href="assets/css/noscript.css" />
-	</noscript>
-	<style type="text/css">
-		a.fab {
-			color: white;
-			text-decoration: none;
-			border: none;
-		}
+      body {
+        background: linear-gradient(
+          135deg,
+          #0a0a0a 0%,
+          #1a1a1a 25%,
+          #0f0f0f 50%,
+          #1a1a1a 75%,
+          #0a0a0a 100%
+        );
+        position: relative;
+        overflow-x: hidden;
+      }
 
-		body {
-			background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 25%, #0f0f0f 50%, #1a1a1a 75%, #0a0a0a 100%);
-			position: relative;
-			overflow-x: hidden;
-		}
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+            circle at 20% 80%,
+            rgba(120, 119, 198, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 20%,
+            rgba(255, 119, 198, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 40% 40%,
+            rgba(120, 219, 255, 0.05) 0%,
+            transparent 50%
+          );
+        pointer-events: none;
+        z-index: -1;
+      }
 
-		body::before {
-			content: '';
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background: 
-				radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
-				radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.1) 0%, transparent 50%),
-				radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.05) 0%, transparent 50%);
-			pointer-events: none;
-			z-index: -1;
-		}
+      body::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: radial-gradient(
+            2px 2px at 20px 30px,
+            #333,
+            transparent
+          ),
+          radial-gradient(2px 2px at 40px 70px, #444, transparent),
+          radial-gradient(1px 1px at 90px 40px, #555, transparent),
+          radial-gradient(1px 1px at 130px 80px, #444, transparent),
+          radial-gradient(2px 2px at 160px 30px, #333, transparent);
+        background-repeat: repeat;
+        background-size: 200px 100px;
+        animation: stars 20s linear infinite;
+        opacity: 0.3;
+        pointer-events: none;
+        z-index: -1;
+      }
 
-		body::after {
-			content: '';
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background-image: 
-				radial-gradient(2px 2px at 20px 30px, #333, transparent),
-				radial-gradient(2px 2px at 40px 70px, #444, transparent),
-				radial-gradient(1px 1px at 90px 40px, #555, transparent),
-				radial-gradient(1px 1px at 130px 80px, #444, transparent),
-				radial-gradient(2px 2px at 160px 30px, #333, transparent);
-			background-repeat: repeat;
-			background-size: 200px 100px;
-			animation: stars 20s linear infinite;
-			opacity: 0.3;
-			pointer-events: none;
-			z-index: -1;
-		}
-
-		@keyframes stars {
-			from { transform: translateY(0px); }
-			to { transform: translateY(-100px); }
-		}
-
-		/* Dark theme for cards */
-		.card.text-white.bg-dark {
-			background: linear-gradient(145deg, #1a1a1a 0%, #0d0d0d 100%) !important;
-			border: 1px solid #333 !important;
-			box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.05) !important;
-			backdrop-filter: blur(10px);
-			max-width: 450px;
-			margin: 0 auto 15px auto;
-		}
-
-		.card.text-white.bg-dark:hover {
-			transform: translateY(-5px);
-			box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1) !important;
-			transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-		}
-
-		.card-header {
-			background: linear-gradient(90deg, #2a2a2a 0%, #1a1a1a 100%) !important;
-			border-bottom: 1px solid #444 !important;
-			color: #00d4ff !important;
-			font-weight: 600;
-			text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
-		}
-
-		.card-title {
-			color: #ffffff !important;
-			text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-		}
-
-		.card-text {
-			color: #cccccc !important;
-		}
-
-		.card-footer {
-			background: linear-gradient(90deg, #1a1a1a 0%, #0d0d0d 100%) !important;
-			border-top: 1px solid #444 !important;
-		}
-
-		
-
-		/* Card deck spacing and floating animation */
-		.card-deck {
-			justify-content: center;
-			gap: 8px;
-			margin-bottom: 20px;
-		}
-		
-		.card-deck .card {
-			animation: float 6s ease-in-out infinite;
-			flex: 0 0 auto;
-		}
-
-		.card-deck:nth-child(odd) .card {
-			animation-delay: 0s;
-		}
-
-		.card-deck:nth-child(even) .card {
-			animation-delay: 2s;
-		}
-
-		@keyframes float {
-			0%, 100% { transform: translateY(0px); }
-			50% { transform: translateY(-10px); }
-		}
-
-		/* ==== Enhanced Headings, Titles & Descriptions ==== */
-/* ==== Reduced Color Palette Overrides ==== */
-.major{
-  background:linear-gradient(90deg,#00d4ff 0%, #a084ee 100%);
-  background-size:200% auto;
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
-  animation:gradientShift 6s linear infinite;
-}
-.card-title{
-  background:linear-gradient(90deg,#ff8a00 0%, #ff4fff 100%);
-  background-size:200% auto;
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
-  animation:gradientShift 8s linear infinite;
-  font-weight:600;
-}
-.card-text, .card-body p{
-    background:linear-gradient(270deg,#e6a3a3 0%,#84ffe8 25%,#a084ee 50%,#f4f4f4 75%,#221f1f 100%);
-  background-size:200% auto;
-  -webkit-background-clip:text;
-  background-clip:text;
-  -webkit-text-fill-color:transparent;
-  animation:gradientShift 6s linear infinite;
-}
-
-		@keyframes gradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-		.major{
-  background:linear-gradient(270deg,#00d4ff,#00ffa1,#ff4fff,#ffd500,#00d4ff);
-  background-size:600% auto;
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
-  animation:gradientShift 7s linear infinite;
-  text-shadow:none !important;
-}
-
-		.card-title{
-  background:linear-gradient(270deg,#ff8a00,#00d4ff,#ff0000);
-  background-size:600% auto;
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
-  animation:gradientShift 9s linear infinite;
-  font-weight:600;
-}
-
-.card-text{
-		  background:linear-gradient(270deg,#ffdd55,#644fff,#00ffc4,#a084ee,#ff5555);
-		  background-size:600% auto;
-		  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
-		  animation:gradientShift 10s linear infinite;
-		}
-
-		
-/* ==== Floating Home Button ==== */
-#floating-home-btn {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 1000;
-}
-
-.home-btn {
-    border: 0;
-    color: rgba(255, 255, 255, 0.35);
-    display: inline-block;
-    font-size: 0.6em;
-    font-weight: bold;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: transform .35s, box-shadow .35s, color .35s;
-}
-
-.home-btn:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 4px 12px rgba(0, 212, 255, 0.35);
-    color: rgba(255, 255, 255, 0.55);
-}
-
-.home-btn.active {
-    color: #ffffff;
-}
-
-/* Glowing effect for links */
-		.fab, .fas {
-			transition: all 0.3s ease;
-		}
-
-		.fab:hover, .fas:hover {
-			color: #00d4ff !important;
-			text-shadow: 0 0 15px rgba(0, 212, 255, 0.8);
-			transform: scale(1.2);
-		}
-	
-        /* === Dark Theme Colour Tweaks === */
-        /* Main title: dark grey with hover accent */
-        .major {
-            background: linear-gradient(90deg, #000000 0%, #e86d6d 0%, #e8cb6d 25%, #6de89a 50%, #6da9e8 75%, #806de8 100%) !important;
-            background-size: 200% auto !important;
-            -webkit-background-clip: text !important;
-            background-clip: text !important;
-            -webkit-text-fill-color: transparent !important;
-            color: transparent !important;
-            animation: none !important;
-            text-shadow: none !important;
-            transition: background-position 0.4s ease;
-        }
-        .major:hover {
-            background: linear-gradient(90deg, #98d0ef 0%,#ef9898 50%, #ffffff 100%) !important;
-            background-size: 200% auto !important;
-            background-position: 100% 0;
-            -webkit-background-clip: text !important;
-            background-clip: text !important;
-            -webkit-text-fill-color: transparent !important;
-            color: transparent !important;
+      @keyframes stars {
+        from {
+          transform: translateY(0px);
         }
 
-        /* Project headings: black–white gradient */
-        .card-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            background: linear-gradient(90deg, #000000, #f3b843, #000000);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradientMove 3s linear infinite;
+        to {
+          transform: translateY(-100px);
+        }
+      }
+
+      /* Dark theme for cards */
+      .card.text-white.bg-dark {
+        background: linear-gradient(
+          145deg,
+          #1a1a1a 0%,
+          #0d0d0d 100%
+        ) !important;
+        border: 1px solid #333 !important;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
+          0 0 0 1px rgba(255, 255, 255, 0.05) !important;
+        backdrop-filter: blur(10px);
+        max-width: 450px;
+        margin: 0 auto 15px auto;
+      }
+
+      .card.text-white.bg-dark:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4),
+          0 0 0 1px rgba(255, 255, 255, 0.1) !important;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .card-header {
+        background: linear-gradient(90deg, #2a2a2a 0%, #1a1a1a 100%) !important;
+        border-bottom: 1px solid #444 !important;
+        color: #00d4ff !important;
+        font-weight: 600;
+        text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+      }
+
+      .card-title {
+        color: #ffffff !important;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+      }
+
+      .card-text {
+        color: #cccccc !important;
+      }
+
+      .card-footer {
+        background: linear-gradient(90deg, #1a1a1a 0%, #0d0d0d 100%) !important;
+        border-top: 1px solid #444 !important;
+      }
+
+      /* Card deck spacing and floating animation */
+      .card-deck {
+        justify-content: center;
+        gap: 8px;
+        margin-bottom: 20px;
+      }
+
+      .card-deck .card {
+        animation: float 6s ease-in-out infinite;
+        flex: 0 0 auto;
+      }
+
+      .card-deck:nth-child(odd) .card {
+        animation-delay: 0s;
+      }
+
+      .card-deck:nth-child(even) .card {
+        animation-delay: 2s;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
         }
 
-        /* Project description: light grey text */
-        .card-text,
-        .card-body p {
-            color: #bbbbbb !important;
+        50% {
+          transform: translateY(-10px);
         }
-            /* === Border & Hover effects identical to index.html === */
-        .card.text-white.bg-dark {
-            background: #1a1a1a !important;
-            border: 1px solid #333 !important;
-            border-radius: 12px !important;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.45) !important;
-            transition: transform 0.35s ease, box-shadow 0.35s ease !important;
+      }
+
+      /* ==== Enhanced Headings, Titles & Descriptions ==== */
+      /* ==== Reduced Color Palette Overrides ==== */
+      .major {
+        background: linear-gradient(90deg, #00d4ff 0%, #a084ee 100%);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradientShift 6s linear infinite;
+      }
+
+      .card-title {
+        background: linear-gradient(90deg, #ff8a00 0%, #ff4fff 100%);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradientShift 8s linear infinite;
+        font-weight: 600;
+      }
+
+      .card-text,
+      .card-body p {
+        background: linear-gradient(
+          270deg,
+          #e6a3a3 0%,
+          #84ffe8 25%,
+          #a084ee 50%,
+          #f4f4f4 75%,
+          #221f1f 100%
+        );
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradientShift 6s linear infinite;
+      }
+
+      @keyframes gradientShift {
+        0% {
+          background-position: 0% 50%;
         }
-        .card.text-white.bg-dark:hover {
-            transform: translateY(-12px) scale(1.03) !important;
-            box-shadow: 0 16px 48px rgba(79,140,255,0.28) !important;
+
+        50% {
+          background-position: 100% 50%;
         }
-        .card.text-white.bg-dark .card-img-top {
-            border: 2px solid rgba(79,140,255,0.3) !important;
-            border-radius: 16px !important;
-            box-shadow: 0 0 6px rgba(79,140,255,0.25), 0 0 12px rgba(160,132,238,0.25) !important;
-            transition: box-shadow 0.35s ease, border-color 0.35s ease !important;
+
+        100% {
+          background-position: 0% 50%;
         }
-        .card.text-white.bg-dark .card-img-top:hover {
-            box-shadow: 0 0 12px rgba(79,140,255,0.45), 0 0 24px rgba(160,132,238,0.45) !important;
-            border-color: rgba(79,140,255,0.6) !important;
-        }
+      }
+
+      .major {
+        background: linear-gradient(
+          270deg,
+          #00d4ff,
+          #00ffa1,
+          #ff4fff,
+          #ffd500,
+          #00d4ff
+        );
+        background-size: 600% auto;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradientShift 7s linear infinite;
+        text-shadow: none !important;
+      }
+
+      .card-title {
+        background: linear-gradient(270deg, #ff8a00, #00d4ff, #ff0000);
+        background-size: 600% auto;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradientShift 9s linear infinite;
+        font-weight: 600;
+      }
+
+      .card-text {
+        background: linear-gradient(
+          270deg,
+          #ffdd55,
+          #644fff,
+          #00ffc4,
+          #a084ee,
+          #ff5555
+        );
+        background-size: 600% auto;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradientShift 10s linear infinite;
+      }
+
+      /* ==== Floating Home Button ==== */
+      #floating-home-btn {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1000;
+      }
+
+      .home-btn {
+        border: 0;
+        color: rgba(255, 255, 255, 0.35);
+        display: inline-block;
+        font-size: 0.6em;
+        font-weight: bold;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: transform 0.35s, box-shadow 0.35s, color 0.35s;
+      }
+
+      .home-btn:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 4px 12px rgba(0, 212, 255, 0.35);
+        color: rgba(255, 255, 255, 0.55);
+      }
+
+      .home-btn.active {
+        color: #ffffff;
+      }
+
+      /* Glowing effect for links */
+      .fab,
+      .fas {
+        transition: all 0.3s ease;
+      }
+
+      .fab:hover,
+      .fas:hover {
+        color: #00d4ff !important;
+        text-shadow: 0 0 15px rgba(0, 212, 255, 0.8);
+        transform: scale(1.2);
+      }
+
+      /* === Dark Theme Colour Tweaks === */
+      /* Main title: dark grey with hover accent */
+      .major {
+        background: linear-gradient(
+          90deg,
+          #000000 0%,
+          #e86d6d 0%,
+          #e8cb6d 25%,
+          #6de89a 50%,
+          #6da9e8 75%,
+          #806de8 100%
+        ) !important;
+        background-size: 200% auto !important;
+        -webkit-background-clip: text !important;
+        background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        color: transparent !important;
+        animation: none !important;
+        text-shadow: none !important;
+        transition: background-position 0.4s ease;
+      }
+
+      .major:hover {
+        background: linear-gradient(
+          90deg,
+          #98d0ef 0%,
+          #ef9898 50%,
+          #ffffff 100%
+        ) !important;
+        background-size: 200% auto !important;
+        background-position: 100% 0;
+        -webkit-background-clip: text !important;
+        background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        color: transparent !important;
+      }
+
+      /* Project headings: black–white gradient */
+      .card-title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        background: linear-gradient(90deg, #000000, #f3b843, #000000);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradientMove 3s linear infinite;
+      }
+
+      /* Project description: light grey text */
+      .card-text,
+      .card-body p {
+        color: #bbbbbb !important;
+      }
+
+      /* === Border & Hover effects identical to index.html === */
+      .card.text-white.bg-dark {
+        background: #1a1a1a !important;
+        border: 1px solid #333 !important;
+        border-radius: 12px !important;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45) !important;
+        transition: transform 0.35s ease, box-shadow 0.35s ease !important;
+      }
+
+      .card.text-white.bg-dark:hover {
+        transform: translateY(-12px) scale(1.03) !important;
+        box-shadow: 0 16px 48px rgba(79, 140, 255, 0.28) !important;
+      }
+
+      .card.text-white.bg-dark .card-img-top {
+        border: 2px solid rgba(79, 140, 255, 0.3) !important;
+        border-radius: 16px !important;
+        box-shadow: 0 0 6px rgba(79, 140, 255, 0.25),
+          0 0 12px rgba(160, 132, 238, 0.25) !important;
+        transition: box-shadow 0.35s ease, border-color 0.35s ease !important;
+      }
+
+      .card.text-white.bg-dark .card-img-top:hover {
+        box-shadow: 0 0 12px rgba(79, 140, 255, 0.45),
+          0 0 24px rgba(160, 132, 238, 0.45) !important;
+        border-color: rgba(79, 140, 255, 0.6) !important;
+      }
     </style>
-</head>
+  </head>
 
-<body class="is-preload">
-	<!-- Particle Background Canvas -->
-	<canvas id="particles-bg"></canvas>
+  <body class="is-preload">
+    <!-- Particle Background Canvas -->
+    <canvas id="particles-bg"></canvas>
 
-	<!-- Header -->
-	<header id="header">
-		<nav>
-			<ul>
-				
-			</ul>
-		</nav>
-	</header>
-	<!-- Floating Home Button -->
-	<div id="floating-home-btn"><a href="index.html" class="home-btn">Home</a></div>
+    <!-- Header -->
+    <header id="header">
+      <nav>
+        <ul></ul>
+      </nav>
+    </header>
+    <!-- Floating Home Button -->
+    <div id="floating-home-btn">
+      <a href="index.html" class="home-btn">Home</a>
+    </div>
 
-	
-	<!-- Wrapper -->
-	<div class="container">
-		<h1 class="major p-4 text-center text-white" style="font-size: 35pt">
-			Projects
-		</h1>
+    <!-- Wrapper -->
+    <div class="container">
+      <h1 class="major p-4 text-center text-white" style="font-size: 35pt">
+        Projects
+      </h1>
 
-		<div class="card-deck p-3">
-			<div class="card text-white bg-dark">
-				<div class="card-header">Featured 🚀</div>
-				<img class="card-img-top" src="images/PrepWise1.png" alt="Card image cap" data-images="images/PrepWise2.png, images/PrepWise3.png, images/PrepWise4.png, images/PrepWise5.png" />
-				<div class="card-body">
-					<h4 class="card-title">PrepWise</h4>
-					<p class="card-text">
-						Experience an innovative music streaming platform that not only
-						offers a vast library of tracks but also lets you see in real time
-						who's tuned in to each song, making it easy to discover who shares
-						your taste in music.
-					</p>
-					<p class="card-text">
-						With its built-in messaging feature, you can effortlessly connect
-						and engage in dynamic conversations with fellow music enthusiasts,
-						turning every listening session into a lively, interactive social
-						experience.
-					</p>
-				</div>
-				<div class="card-footer text-muted">
-					<a href="https://github.com/Varadpensalwar/realtime-spotify-clone.git" class="fab fa-github fa-lg"
-						target="_blank" aria-hidden="true"></a>
-					<a href="https://realtime-spotify-clone-6az4.onrender.com/" class="fas fa-external-link-alt"
-						style="margin-left: 10px" target="_blank" aria-hidden="true"></a>
-				</div>
-			</div>
+      <div class="card-deck p-3">
+        <div class="card text-white bg-dark">
+          <div class="card-header">Featured 🚀</div>
+          <img
+            class="card-img-top"
+            src="images/PrepWise1.png"
+            alt="Card image cap"
+            data-images="images/PrepWise2.png, images/PrepWise3.png, images/PrepWise4.png, images/PrepWise5.png"
+          />
+          <div class="card-body">
+            <h4 class="card-title">PrepWise</h4>
+            <p class="card-text">
+              Prepwise is a smart mock interview platform that uses advanced AI
+              technology to simulate real-life interview scenarios, helping
+              users practice both technical and behavioral questions.
+            </p>
+            <p class="card-text">
+              With instant feedback and a clean, intuitive interface, it creates
+              a focused environment to boost your confidence and sharpen your
+              interview skills.
+            </p>
+          </div>
+          <div class="card-footer text-muted">
+            <a
+              href="https://github.com/Varadpensalwar/PrepWise.git"
+              class="fab fa-github fa-lg"
+              target="_blank"
+              aria-hidden="true"
+            ></a>
+            <a
+              href="https://drive.google.com/file/d/1VvCHYJUhNTsKuO1s-JBwECPlOwFDo_FZ/view"
+              class="fas fa-external-link-alt"
+              style="margin-left: 10px"
+              target="_blank"
+              aria-hidden="true"
+            ></a>
+          </div>
+        </div>
 
-			<div class="card text-white bg-dark">
-				<div class="card-header">Featured 🚀</div>
-				<img class="card-img-top" src="images/SpotifyButBetter.png" alt="Card image cap" data-images="images/Balaji Dresses Biloli.png, images/Balaji Dresses Biloli.png" />
-				<div class="card-body">
-					<h4 class="card-title">Spotify but better</h4>
-					<p class="card-text">
-						Experience an innovative music streaming platform that not only
-						offers a vast library of tracks but also lets you see in real time
-						who's tuned in to each song, making it easy to discover who shares
-						your taste in music.
-					</p>
-					<p class="card-text">
-						With its built-in messaging feature, you can effortlessly connect
-						and engage in dynamic conversations with fellow music enthusiasts,
-						turning every listening session into a lively, interactive social
-						experience.
-					</p>
-				</div>
-				<div class="card-footer text-muted">
-					<a href="https://github.com/Varadpensalwar/realtime-spotify-clone.git" class="fab fa-github fa-lg"
-						target="_blank" aria-hidden="true"></a>
-					<a href="https://realtime-spotify-clone-6az4.onrender.com/" class="fas fa-external-link-alt"
-						style="margin-left: 10px" target="_blank" aria-hidden="true"></a>
-				</div>
-			</div>
-		</div>
+        <div class="card text-white bg-dark">
+          <div class="card-header">Featured 🚀</div>
+          <img
+            class="card-img-top"
+            src="images/SpotifyButBetter.png"
+            alt="Card image cap"
+            data-images="images/Balaji Dresses Biloli.png, images/Balaji Dresses Biloli.png"
+          />
+          <div class="card-body">
+            <h4 class="card-title">Spotify but better</h4>
+            <p class="card-text">
+              Experience an innovative music streaming platform that not only
+              offers a vast library of tracks but also lets you see in real time
+              who's tuned in to each song, making it easy to discover who shares
+              your taste in music.
+            </p>
+            <p class="card-text">
+              With its built-in messaging feature, you can effortlessly connect
+              and engage in dynamic conversations with fellow music enthusiasts,
+              turning every listening session into a lively, interactive social
+              experience.
+            </p>
+          </div>
+          <div class="card-footer text-muted">
+            <a
+              href="https://github.com/Varadpensalwar/realtime-spotify-clone.git"
+              class="fab fa-github fa-lg"
+              target="_blank"
+              aria-hidden="true"
+            ></a>
+            <a
+              href="https://realtime-spotify-clone-6az4.onrender.com/"
+              class="fas fa-external-link-alt"
+              style="margin-left: 10px"
+              target="_blank"
+              aria-hidden="true"
+            ></a>
+          </div>
+        </div>
+      </div>
 
-		<div class="card-deck p-3">
-			<div class="card text-white bg-dark">
-				<div class="card-header">Featured 🚀</div>
-				<img class="card-img-top" src="images/Chatty.png" alt="Card image cap" data-images="images/Chatty1.png, images/Chatty2.png" />
-				<div class="card-body">
-					<h4 class="card-title">Chatty - The Chatting Website</h4>
-					<p class="card-text">
-						Chatty is your open invitation to connect with fascinating
-						individuals while keeping your personal contact information
-						completely private.
-					</p>
-					<p>
-						Experience effortless, secure, and anonymous conversations on our
-						platform, where you can explore diverse profiles and engage in
-						genuine interactions without ever revealing your contact details.
-					</p>
-				</div>
+      <div class="card-deck p-3">
+        <div class="card text-white bg-dark">
+          <div class="card-header">Featured 🚀</div>
+          <img
+            class="card-img-top"
+            src="images/Chatty.png"
+            alt="Card image cap"
+            data-images="images/Chatty1.png, images/Chatty2.png"
+          />
+          <div class="card-body">
+            <h4 class="card-title">Chatty - The Chatting Website</h4>
+            <p class="card-text">
+              Chatty is your open invitation to connect with fascinating
+              individuals while keeping your personal contact information
+              completely private.
+            </p>
+            <p>
+              Experience effortless, secure, and anonymous conversations on our
+              platform, where you can explore diverse profiles and engage in
+              genuine interactions without ever revealing your contact details.
+            </p>
+          </div>
 
-				<div class="card-footer">
-					<a href="https://github.com/Varadpensalwar/ziggy.git" class="fab fa-github fa-lg" target="_blank"
-						aria-hidden="true"></a>
-					<a href="https://chatty-tc2h.onrender.com/" class="fas fa-external-link-alt"
-						style="margin-left: 10px" target="_blank" aria-hidden="true"></a>
-				</div>
-			</div>
-			<div class="card text-white bg-dark">
-				<div class="card-header">Featured 🚀</div>
-				<img class="card-img-top" src="images/Ziggy - The Voice Assistant.png" alt="Card image cap" data-images="images/Ziggy - The Voice Assistant 1.png, images/Ziggy - The Voice Assistant 2.png" />
-				<div class="card-body">
-					<h4 class="card-title">Ziggy - The Voice Assistant</h4>
-					<p class="card-text">
-						Ziggy is an intelligent voice assistant designed to simplify your
-						daily tasks through seamless voice interactions.
-					</p>
-					<p>
-						With its user-friendly interface and personalized features, Ziggy
-						adapts to your needs, making life more efficient and enjoyable.
-					</p>
-				</div>
-				<div class="card-footer">
-					<a href="https://github.com/Varadpensalwar/ziggy.git" class="fab fa-github fa-lg" target="_blank"
-						aria-hidden="true"></a>
-					<a href="https://drive.google.com/file/d/1KQ1CG7MDIUch5QDc1DuLRuik0zWW03BH/view?usp=sharing"
-						class="fas fa-external-link-alt" style="margin-left: 10px" target="_blank"
-						aria-hidden="true"></a>
-				</div>
-			</div>
-		</div>
+          <div class="card-footer">
+            <a
+              href="https://github.com/Varadpensalwar/ziggy.git"
+              class="fab fa-github fa-lg"
+              target="_blank"
+              aria-hidden="true"
+            ></a>
+            <a
+              href="https://chatty-tc2h.onrender.com/"
+              class="fas fa-external-link-alt"
+              style="margin-left: 10px"
+              target="_blank"
+              aria-hidden="true"
+            ></a>
+          </div>
+        </div>
+        <div class="card text-white bg-dark">
+          <div class="card-header">Featured 🚀</div>
+          <img
+            class="card-img-top"
+            src="images/Ziggy - The Voice Assistant.png"
+            alt="Card image cap"
+            data-images="images/Ziggy - The Voice Assistant 1.png, images/Ziggy - The Voice Assistant 2.png"
+          />
+          <div class="card-body">
+            <h4 class="card-title">Ziggy - The Voice Assistant</h4>
+            <p class="card-text">
+              Ziggy is an intelligent voice assistant designed to simplify your
+              daily tasks through seamless voice interactions.
+            </p>
+            <p>
+              With its user-friendly interface and personalized features, Ziggy
+              adapts to your needs, making life more efficient and enjoyable.
+            </p>
+          </div>
+          <div class="card-footer">
+            <a
+              href="https://github.com/Varadpensalwar/ziggy.git"
+              class="fab fa-github fa-lg"
+              target="_blank"
+              aria-hidden="true"
+            ></a>
+            <a
+              href="https://drive.google.com/file/d/1KQ1CG7MDIUch5QDc1DuLRuik0zWW03BH/view?usp=sharing"
+              class="fas fa-external-link-alt"
+              style="margin-left: 10px"
+              target="_blank"
+              aria-hidden="true"
+            ></a>
+          </div>
+        </div>
+      </div>
 
-		<div class="card-deck p-3">
-			<div class="card text-white bg-dark">
-				<div class="card-header">Featured 🚀</div>
-				<img class="card-img-top" src="images/Pets Vibe.png" alt="Card image cap" data-images="images/Pets Vibe 1.png, images/Pets Vibe 2.png" />
-				<div class="card-body">
-					<h4 class="card-title">Pets Vibe</h4>
-					<p class="card-text">
-						Pets Vibe is a dedicated platform designed to empower pet
-						enthusiasts to connect, share experiences, and celebrate their
-						furry friends in a vibrant online community.
-					</p>
-					<p>
-						In this project, I crafted a responsive and engaging interface
-						that delivers a seamless user experience, allowing pet lovers to
-						interact and explore content with ease.
-					</p>
-				</div>
-				<div class="card-footer text-muted">
-					<a href="https://github.com/Varadpensalwar/Pets-Vibe.git" class="fab fa-github fa-lg"
-						target="_blank" aria-hidden="true"></a>
-					<a href="https://pets-vibe.infinityfreeapp.com/index.php?i=3#" class="fas fa-external-link-alt"
-						style="margin-left: 10px" target="_blank" aria-hidden="true"></a>
-				</div>
-			</div>
-			<div class="card text-white bg-dark">
-				<div class="card-header">Featured 🚀</div>
-				<img class="card-img-top" src="images/blog_SS.png" alt="Card image cap" data-images="images/blog_SS_1.png, images/blog_SS_2.png" />
-				<div class="card-body">
-					<h4 class="card-title">Varad's Blog App</h4>
-					<p class="card-text">
-						Developed and deployed a full-stack blog website using the MERN
-						stack (MongoDB, Express.js, React, Node.js) featuring user
-						authentication, CRUD operations for blog posts, and a responsive
-						UI. Built with RESTful APIs and modern design practices
-					</p>
-					<p class="card-text">
-						Check the Demo Below
-					</p>
-				</div>
-				<div class="card-footer text-muted">
-					<a href="https://github.com/Varadpensalwar/Blog-App.git" class="fab fa-github fa-lg" target="_blank"
-						aria-hidden="true"></a>
-					<a href="https://varads-blog.onrender.com/" class="fas fa-external-link-alt"
-						style="margin-left: 10px" target="_blank" aria-hidden="true"></a>
-				</div>
-			</div>
-		</div>
+      <div class="card-deck p-3">
+        <div class="card text-white bg-dark">
+          <div class="card-header">Featured 🚀</div>
+          <img
+            class="card-img-top"
+            src="images/Pets Vibe.png"
+            alt="Card image cap"
+            data-images="images/Pets Vibe 1.png, images/Pets Vibe 2.png"
+          />
+          <div class="card-body">
+            <h4 class="card-title">Pets Vibe</h4>
+            <p class="card-text">
+              Pets Vibe is a dedicated platform designed to empower pet
+              enthusiasts to connect, share experiences, and celebrate their
+              furry friends in a vibrant online community.
+            </p>
+            <p>
+              In this project, I crafted a responsive and engaging interface
+              that delivers a seamless user experience, allowing pet lovers to
+              interact and explore content with ease.
+            </p>
+          </div>
+          <div class="card-footer text-muted">
+            <a
+              href="https://github.com/Varadpensalwar/Pets-Vibe.git"
+              class="fab fa-github fa-lg"
+              target="_blank"
+              aria-hidden="true"
+            ></a>
+            <a
+              href="https://pets-vibe.infinityfreeapp.com/index.php?i=3#"
+              class="fas fa-external-link-alt"
+              style="margin-left: 10px"
+              target="_blank"
+              aria-hidden="true"
+            ></a>
+          </div>
+        </div>
+        <div class="card text-white bg-dark">
+          <div class="card-header">Featured 🚀</div>
+          <img
+            class="card-img-top"
+            src="images/blog_SS.png"
+            alt="Card image cap"
+            data-images="images/blog_SS_1.png, images/blog_SS_2.png"
+          />
+          <div class="card-body">
+            <h4 class="card-title">Varad's Blog App</h4>
+            <p class="card-text">
+              Developed and deployed a full-stack blog website using the MERN
+              stack (MongoDB, Express.js, React, Node.js) featuring user
+              authentication, CRUD operations for blog posts, and a responsive
+              UI. Built with RESTful APIs and modern design practices
+            </p>
+            <p class="card-text">Check the Demo Below</p>
+          </div>
+          <div class="card-footer text-muted">
+            <a
+              href="https://github.com/Varadpensalwar/Blog-App.git"
+              class="fab fa-github fa-lg"
+              target="_blank"
+              aria-hidden="true"
+            ></a>
+            <a
+              href="https://varads-blog.onrender.com/"
+              class="fas fa-external-link-alt"
+              style="margin-left: 10px"
+              target="_blank"
+              aria-hidden="true"
+            ></a>
+          </div>
+        </div>
+      </div>
 
+      <div class="card-deck p-3">
+        <div class="card text-white bg-dark">
+          <div class="card-header">Featured 🚀</div>
+          <img
+            class="card-img-top"
+            src="images/Balaji Dresses Biloli.png"
+            alt="Card image cap"
+            data-images="images/Balaji Dresses Biloli 1.png, images/Balaji Dresses Biloli 2.png"
+          />
+          <div class="card-body">
+            <h4 class="card-title">Balaji Dresses, Biloli</h4>
+            <p class="card-text">
+              Balaji Dresses is a stylish and affordable clothing store offering
+              a wide range of trendy outfits for men, women, and kids. Our
+              website provides a seamless shopping experience with the latest
+              fashion collections, easy navigation, and secure checkout.
+            </p>
+          </div>
+          <div class="card-footer text-muted">
+            <a
+              href="https://github.com/Varadpensalwar/Balaji-Dresses.git"
+              class="fab fa-github fa-lg"
+              target="_blank"
+              aria-hidden="true"
+            ></a>
+            <a
+              href="https://balaji-dresses-f7b4.onrender.com/"
+              class="fas fa-external-link-alt"
+              style="margin-left: 10px"
+              target="_blank"
+              aria-hidden="true"
+            ></a>
+          </div>
+        </div>
+        <div class="card text-white bg-dark">
+          <div class="card-header">Featured 🚀</div>
+          <img
+            class="card-img-top"
+            src="images/Porsche 911 GT3 RS.png"
+            alt="Card image cap"
+            data-images="images/Porsche 911 GT3 RS 1.png, images/Porsche 911 GT3 RS 2.png"
+          />
+          <div class="card-body">
+            <h4 class="card-title">Porsche 911 GT3 RS</h4>
+            <p class="card-text">
+              I developed a sleek Porsche 911 GT3 RS website using React JS that
+              brings the car's dynamic personality to life.Crafted to be fully
+              mobile-responsive, it offers an app-like, immersive experience on
+              any device, perfect for enthusiasts on the go.
+            </p>
+          </div>
+          <div class="card-footer text-muted">
+            <a
+              href="https://github.com/Varadpensalwar/porsche911gt3rs.git"
+              class="fab fa-github fa-lg"
+              target="_blank"
+              aria-hidden="true"
+            ></a>
+            <a
+              href="https://porsche911gt3rs.vercel.app/"
+              class="fas fa-external-link-alt"
+              style="margin-left: 10px"
+              target="_blank"
+              aria-hidden="true"
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-        <div class="card-deck p-3">
-			<div class="card text-white bg-dark">
-				<div class="card-header">Featured 🚀</div>
-				<img class="card-img-top" src="images/Balaji Dresses Biloli.png" alt="Card image cap" data-images="images/Balaji Dresses Biloli 1.png, images/Balaji Dresses Biloli 2.png" />
-				<div class="card-body">
-					<h4 class="card-title">Balaji Dresses, Biloli</h4>
-					<p class="card-text">
-						Balaji Dresses is a stylish and affordable clothing store offering
-						a wide range of trendy outfits for men, women, and kids. Our
-						website provides a seamless shopping experience with the latest
-						fashion collections, easy navigation, and secure checkout.
-					</p>
-					
-				</div>
-				<div class="card-footer text-muted">
-					<a href="https://github.com/Varadpensalwar/Balaji-Dresses.git" class="fab fa-github fa-lg"
-						target="_blank" aria-hidden="true"></a>
-					<a href="https://balaji-dresses-f7b4.onrender.com/" class="fas fa-external-link-alt"
-						style="margin-left: 10px" target="_blank" aria-hidden="true"></a>
-				</div>
-			</div>
-			<div class="card text-white bg-dark">
-				<div class="card-header">Featured 🚀</div>
-				<img class="card-img-top" src="images/Porsche 911 GT3 RS.png" alt="Card image cap" data-images="images/Porsche 911 GT3 RS 1.png, images/Porsche 911 GT3 RS 2.png" />
-				<div class="card-body">
-					<h4 class="card-title">Porsche 911 GT3 RS</h4>
-					<p class="card-text">
-						I developed a sleek Porsche 911 GT3 RS website using React JS that
-						brings the car's dynamic personality to life.Crafted to be fully mobile-responsive, it offers an
-						app-like,
-						immersive experience on any device, perfect for enthusiasts on the
-						go.
-					</p>
-				
-				</div>
-				<div class="card-footer text-muted">
-					<a href="https://github.com/Varadpensalwar/porsche911gt3rs.git" class="fab fa-github fa-lg" target="_blank"
-						aria-hidden="true"></a>
-					<a href="https://porsche911gt3rs.vercel.app/" class="fas fa-external-link-alt"
-						style="margin-left: 10px" target="_blank" aria-hidden="true"></a>
-				</div>
-			</div>
-		</div>
-		
-	</div>
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="sw.js"></script>
 
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Convert any project image that lists extra images into an auto-scrolling Swiper carousel
+        document
+          .querySelectorAll("img.card-img-top[data-images]")
+          .forEach(function (imgEl) {
+            const extraImages = imgEl.dataset.images
+              .split(",")
+              .map(function (s) {
+                return s.trim();
+              })
+              .filter(Boolean);
+            if (extraImages.length === 0) return;
 
+            // Include the original image first, followed by any extra images
+            const slides = [imgEl.src].concat(extraImages);
 
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
-	<script src="sw.js"></script>
+            // Build Swiper markup
+            const swiper = document.createElement("div");
+            swiper.className = "swiper project-swiper";
+            const wrapper = document.createElement("div");
+            wrapper.className = "swiper-wrapper";
 
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-		crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-		crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-		crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-	<script>
-		document.addEventListener('DOMContentLoaded', function () {
-			// Convert any project image that lists extra images into an auto-scrolling Swiper carousel
-			document.querySelectorAll('img.card-img-top[data-images]').forEach(function (imgEl) {
-				const extraImages = imgEl.dataset.images.split(',').map(function (s) { return s.trim(); }).filter(Boolean);
-				if (extraImages.length === 0) return;
+            slides.forEach(function (src) {
+              const slide = document.createElement("div");
+              slide.className = "swiper-slide";
 
-				// Include the original image first, followed by any extra images
-				const slides = [imgEl.src].concat(extraImages);
+              const img = document.createElement("img");
+              img.src = src;
+              img.alt = imgEl.alt || "Project image";
+              img.className = "card-img-top";
 
-				// Build Swiper markup
-				const swiper = document.createElement('div');
-				swiper.className = 'swiper project-swiper';
-				const wrapper = document.createElement('div');
-				wrapper.className = 'swiper-wrapper';
+              slide.appendChild(img);
+              wrapper.appendChild(slide);
+            });
 
-				slides.forEach(function (src) {
-					const slide = document.createElement('div');
-					slide.className = 'swiper-slide';
+            swiper.appendChild(wrapper);
 
-					const img = document.createElement('img');
-					img.src = src;
-					img.alt = imgEl.alt || 'Project image';
-					img.className = 'card-img-top';
+            // Replace the original image with the newly-created Swiper
+            imgEl.parentNode.replaceChild(swiper, imgEl);
 
-					slide.appendChild(img);
-					wrapper.appendChild(slide);
-				});
-
-				swiper.appendChild(wrapper);
-
-				// Replace the original image with the newly-created Swiper
-				imgEl.parentNode.replaceChild(swiper, imgEl);
-
-				// Activate Swiper for this carousel
-				new Swiper(swiper, {
-					effect: 'fade',
-					loop: true,
-					autoplay: { delay: 2200, disableOnInteraction: false },
-					fadeEffect: { crossFade: true },
-					allowTouchMove: false,
-				});
-			});
-		});
-	</script>
-</body>
-
+            // Activate Swiper for this carousel
+            new Swiper(swiper, {
+              effect: "fade",
+              loop: true,
+              autoplay: { delay: 2200, disableOnInteraction: false },
+              fadeEffect: { crossFade: true },
+              allowTouchMove: false,
+            });
+          });
+      });
+    </script>
+  </body>
 </html>
