@@ -52,7 +52,7 @@ This website is built using:
 
 - 🐙 [GitHub](https://github.com/Varadpensalwar)
 - 💼 [LinkedIn](https://www.linkedin.com/in/varad-pensalwar/)
-- 🐦 [Twitter](https://x.com/PensalwarVarad)
+- 🐦 [Twitter](https://x.com/VaradPensalwar)
 - 📧 [Email](mailto:varadpensalwar@gmail.com)
 
 ## Credits
